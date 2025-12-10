@@ -8,6 +8,7 @@ const routes: Routes = [
     component: Layout,
     children: [
       { path: 'dashboard', loadComponent: () => import('../dashboard/dashboard/dashboard') },
+      { path: 'users', loadComponent: () => import('../dashboard/user/user') },
     ],
   },
 ];

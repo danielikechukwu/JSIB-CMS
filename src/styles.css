@@ -122,6 +122,7 @@
   /* Color */
   --color-primary: #25A249;
   --color-primary-light: #EBFFEB;
+  --color-dark-gray: #8E8E8E;
 
   /* Font */
   --font-inter: inter, sans-serif;
@@ -130,10 +131,31 @@
 }
 
 body {
-  @apply font-inter h-dvh overflow-hidden
+  @apply font-inter h-dvh font-normal overflow-hidden
 }
 
-/* Button Global Styling */
+/* Global Button Styling */
 .btn {
-  @apply w-full first-letter:capitalize rounded-md bg-primary text-white font-normal text-center py-2
+  @apply w-full first-letter:capitalize rounded-md bg-primary text-white font-normal text-center py-2 text-sm cursor-pointer hover:bg-green-700
+}
+
+/* Global form styling */
+.form {
+  @apply border border-yellow-950
+}
+
+.form .form-container {
+ @apply flex flex-col gap-4
+}
+
+.form .form-container .form-group {
+ @apply flex flex-col gap-2
+}
+
+.form .form-container label {
+ @apply text-black font-semibold capitalize text-sm
+}
+
+.form-group .form-control {
+  @apply border border-gray-400 focus:border-primary rounded-sm py-2 px-2 text-sm text-black font-normal placeholder:capitalize! placeholder-gray-500 placeholder:opacity-50 focus:outline-0
 }

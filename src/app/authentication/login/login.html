@@ -1,3 +1,45 @@
-<div>
+<div class="flex flex-row h-full">
+
+    <div class="bg-[url('/images/login-banner.jpg')] hidden md:block bg-right bg-cover w-[56%]">
+        <div class="flex">
+            <div class="flex flex-row items-center gap-3 my-10 ml-10">
+                <img src="/images/logo.svg" alt="logo" width="88px" height="75px">
+                <span class="uppercase font-black">admin cms</span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="md:w-[44%] w-full flex">
+
+        <div class="w-full flex flex-col gap-5 justify-center">
+            <img src="/images/logo.svg" alt="logo" width="146px" height="125px" class="self-center">
+            <div class="flex flex-col gap-3">
+                <span class="first-letter:uppercase font-bold text-center text-2xl">login to your account</span>
+                <span class="first-letter:uppercase font-medium text-gray-500 text-sm text-center">enter your details
+                    below to login
+                    to your
+                    account</span>
+            </div>
+            <div class="border border-amber-500 mx-4 md:mx-10 lg:mx-19">
+                <form class="form">
+                    <div class="form-container">
+
+                        <div class="form-group">
+                            <label for="email">email</label>
+                            <input type="text" class="form-control" placeholder="enter email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">password</label>
+                            <input type="text" class="form-control" placeholder="enter password">
+                        </div>
+                        <button type="submit" class="btn">sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
 
 </div>
