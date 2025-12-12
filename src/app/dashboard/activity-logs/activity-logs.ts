@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './activity-logs.html',
   styleUrl: './activity-logs.css',
 })
-export class ActivityLogs {
-
-}
+export default class ActivityLogs {}

@@ -6,6 +6,4 @@ import { Component } from '@angular/core';
   templateUrl: './analytics-report.html',
   styleUrl: './analytics-report.css',
 })
-export class AnalyticsReport {
-
-}
+export default class AnalyticsReport {}

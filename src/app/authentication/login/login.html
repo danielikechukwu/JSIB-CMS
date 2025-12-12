@@ -1,14 +1,14 @@
 <div class="flex flex-row h-full">
 
-    <div class="bg-[url('/images/login-banner.jpg')] hidden md:block bg-right bg-cover w-[56%]">
+    <div
+        class="bg-[url('/images/login-banner.jpg')] hidden md:block bg-right bg-cover w-[56%] bg-primary-light bg-blend-multiply">
         <div class="flex">
             <div class="flex flex-row items-center gap-3 my-10 ml-10">
                 <img src="/images/logo.svg" alt="logo" width="88px" height="75px">
-                <span class="uppercase font-black">admin cms</span>
+                <span class="uppercase font-black text-lg!">remote authoring cms</span>
             </div>
         </div>
     </div>
-
 
     <div class="md:w-[44%] w-full flex">
 
@@ -21,25 +21,38 @@
                     to your
                     account</span>
             </div>
-            <div class="border border-amber-500 mx-4 md:mx-10 lg:mx-19">
-                <form class="form">
+            <div class="mx-4 md:mx-10! lg:mx-19!">
+                <form [formGroup]="loginForm" class="form" (ngSubmit)="submitLoginForm()">
                     <div class="form-container">
-
                         <div class="form-group">
                             <label for="email">email</label>
-                            <input type="text" class="form-control" placeholder="enter email">
+                            <input type="text" formControlName="email" class="form-control"
+                                [ngClass]="{'border border-red-400!': loginForm.invalid && loginForm.get('email')?.touched && (loginForm.get('email')?.hasError('required') || loginForm.get('email')?.hasError('email'))}"
+                                placeholder="enter email">
+                            @if(loginForm.invalid && loginForm.get('email')?.touched) {
+                            @if(loginForm.get('email')?.hasError('required')) {
+                            <span class="control-error">email is required</span>
+                            }
+                            @if(loginForm.get('email')?.hasError('email')) {
+                            <span class="control-error">valid email required</span>
+                            }
+                            }
                         </div>
-
                         <div class="form-group">
                             <label for="password">password</label>
-                            <input type="text" class="form-control" placeholder="enter password">
+                            <input type="text" formControlName="password" class="form-control"
+                                [ngClass]="{'border border-red-400!': loginForm.invalid && loginForm.get('password')?.touched &&  loginForm.get('password')?.hasError('required')}"
+                                placeholder="enter password">
+                            @if(loginForm.invalid && loginForm.get('password')?.touched) {
+                            @if(loginForm.get('password')?.hasError('required')) {
+                            <span class="control-error">password is required</span>
+                            }
+                            }
                         </div>
-                        <button type="submit" class="btn">sign in</button>
+                        <button type="submit" class="btn font-semibold">sign in</button>
                     </div>
                 </form>
             </div>
         </div>
-
     </div>
-
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, model } from '@angular/core';
 
 @Component({
   selector: 'app-topbar',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './topbar.css',
 })
 export class Topbar {
-
+  openSideNav = model.required<boolean>();
 }

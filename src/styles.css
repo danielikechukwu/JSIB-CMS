@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@import '@ngxpert/hot-toast/styles.css';
 
 /* inter-100 - latin */
 @font-face {
@@ -127,11 +128,10 @@
   /* Font */
   --font-inter: inter, sans-serif;
 
-  /* Text */
 }
 
 body {
-  @apply font-inter h-dvh font-normal overflow-hidden
+  @apply font-inter h-dvh font-normal overflow-hidden text-xs bg-white
 }
 
 /* Global Button Styling */
@@ -141,7 +141,7 @@ body {
 
 /* Global form styling */
 .form {
-  @apply border border-yellow-950
+  @apply border border-white
 }
 
 .form .form-container {
@@ -152,10 +152,31 @@ body {
  @apply flex flex-col gap-2
 }
 
+.form .form-container .form-group .control-error {
+ @apply text-xs text-red-400 first-letter:capitalize
+}
+
 .form .form-container label {
- @apply text-black font-semibold capitalize text-sm
+ @apply text-black font-semibold capitalize text-xs
 }
 
 .form-group .form-control {
-  @apply border border-gray-400 focus:border-primary rounded-sm py-2 px-2 text-sm text-black font-normal placeholder:capitalize! placeholder-gray-500 placeholder:opacity-50 focus:outline-0
+  @apply border border-gray-300 focus:border-primary rounded-sm py-2 px-2 text-xs text-black font-normal placeholder:capitalize! placeholder-gray-500 placeholder:opacity-50 focus:outline-0
+}
+
+/* Global nav styling */
+.nav {
+  @apply p-3 rounded-sm cursor-pointer text-sm
+}
+
+.nav-active {
+  @apply bg-primary text-white cursor-pointer text-sm rounded-sm p-3;
+}
+
+.nav-active svg {
+  @apply stroke-white;
+}
+
+.nav:hover {
+  @apply bg-primary;
 }
