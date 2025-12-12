@@ -8,6 +8,7 @@ export class Store {
   private _store = signal<StoreDto>({
     isMobile: false,
     openSideNav: false,
+    routeDetail: {},
   });
 
   private getStore() {

@@ -1,4 +1,5 @@
-import { Component, model } from '@angular/core';
+import { Component, inject, model } from '@angular/core';
+import { Store } from '../../store/store';
 
 @Component({
   selector: 'app-topbar',
@@ -7,5 +8,7 @@ import { Component, model } from '@angular/core';
   styleUrl: './topbar.css',
 })
 export class Topbar {
+  protected _store = inject(Store);
+
   openSideNav = model.required<boolean>();
 }

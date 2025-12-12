@@ -8,9 +8,9 @@
     <div class="w-full md:w-80! lg:w-75! border-r border-gray-300 fixed bg-white md:relative z-80 h-full"
         animate.enter="enter-animation" animate.leave="leave-animation">
         <div class="md:hidden absolute left-5 top-10 cursor-pointer" (click)="openSideNav.set(!openSideNav())">
-            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-primary stroke-3" viewBox="0 0 24 24" width="20"
-                height="20" color="currentColor" fill="none" stroke="#141B34" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-primary stroke-3 w-6 h-6" viewBox="0 0 24 24"
+                width="20" height="20" color="currentColor" fill="none" stroke="#141B34" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085" />
             </svg>
         </div>
@@ -25,7 +25,7 @@
             <app-topbar [(openSideNav)]="openSideNav" />
         </div>
 
-        <div class="m-6">
+        <div class="mx-6 my-10">
             <router-outlet />
         </div>
 

@@ -136,7 +136,7 @@ body {
 
 /* Global Button Styling */
 .btn {
-  @apply w-full first-letter:capitalize rounded-md bg-primary text-white font-normal text-center py-2 text-sm cursor-pointer hover:bg-green-700
+  @apply px-5 first-letter:capitalize rounded-md bg-primary text-white font-normal text-center py-2 text-xs cursor-pointer hover:bg-green-700
 }
 
 /* Global form styling */
@@ -164,6 +164,10 @@ body {
   @apply border border-gray-300 focus:border-primary rounded-sm py-2 px-2 text-xs text-black font-normal placeholder:capitalize! placeholder-gray-500 placeholder:opacity-50 focus:outline-0
 }
 
+.form-control {
+  @apply border border-gray-300 focus:border-primary rounded-sm py-2 px-2 text-xs text-black font-normal placeholder:capitalize! placeholder-gray-500 placeholder:opacity-50 focus:outline-0
+}
+
 /* Global nav styling */
 .nav {
   @apply p-3 rounded-sm cursor-pointer text-sm
@@ -179,4 +183,21 @@ body {
 
 .nav:hover {
   @apply bg-primary;
+}
+
+/* Global table styling */
+table thead th {
+  @apply first-letter:uppercase border-t! border-gray-300! border-dashed! bg-[#FAFAFA]! py-5!
+}
+
+table tbody tr td {
+  @apply first-letter:uppercase
+}
+
+table tbody {
+  @apply ml-12!
+}
+
+table tbody tr:last-child {
+  @apply border-b-0! text-amber-300 bg-transparent! 
 }
