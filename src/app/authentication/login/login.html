@@ -22,31 +22,32 @@
                     account</span>
             </div>
             <div class="mx-4 md:mx-10! lg:mx-19!">
-                <form [formGroup]="loginForm" class="form" (ngSubmit)="submitLoginForm()">
+                <form class="form" (submit)="onSubmit($event)" novalidate>
                     <div class="form-container">
                         <div class="form-group">
                             <label for="email">email</label>
-                            <input type="text" formControlName="email" class="form-control"
-                                [ngClass]="{'border border-red-400!': loginForm.invalid && loginForm.get('email')?.touched && (loginForm.get('email')?.hasError('required') || loginForm.get('email')?.hasError('email'))}"
+                            <input type="text" [field]="loginForm.email" autocomplete="new-email" class="form-control"
+                                [ngClass]="{'border border-red-400!': loginForm.email().invalid() && loginForm.email().touched()}"
                                 placeholder="enter email">
-                            @if(loginForm.invalid && loginForm.get('email')?.touched) {
-                            @if(loginForm.get('email')?.hasError('required')) {
-                            <span class="control-error">email is required</span>
-                            }
-                            @if(loginForm.get('email')?.hasError('email')) {
-                            <span class="control-error">valid email required</span>
-                            }
+                            @if(loginForm.email().invalid() && loginForm.email().touched()) {
+                            <div class="control-error">
+                                @for (error of loginForm.email().errors(); track error.kind) {
+                                <span>{{ error.message }}</span>
+                                }
+                            </div>
                             }
                         </div>
                         <div class="form-group">
                             <label for="password">password</label>
-                            <input type="text" formControlName="password" class="form-control"
-                                [ngClass]="{'border border-red-400!': loginForm.invalid && loginForm.get('password')?.touched &&  loginForm.get('password')?.hasError('required')}"
+                            <input type="password" [field]="loginForm.password" class="form-control"
+                                [ngClass]="{'border border-red-400!': loginForm.password().invalid() && loginForm.password().touched()}"
                                 placeholder="enter password">
-                            @if(loginForm.invalid && loginForm.get('password')?.touched) {
-                            @if(loginForm.get('password')?.hasError('required')) {
-                            <span class="control-error">password is required</span>
-                            }
+                            @if(loginForm.password().invalid() && loginForm.password().touched()) {
+                            <div class="control-error">
+                                @for (error of loginForm.password().errors(); track error.kind) {
+                                <span>{{ error.message }}</span>
+                                }
+                            </div>
                             }
                         </div>
                         <button type="submit" class="btn font-semibold">sign in</button>

@@ -15,9 +15,20 @@ const routes: Routes = [
       },
       {
         path: 'users',
-        loadComponent: () => import('../dashboard/user/user'),
-        title: 'Users',
-        data: { title: 'Users' },
+        children: [
+          {
+            path: '',
+            loadComponent: () => import('../dashboard/users/users'),
+            title: 'Users',
+            data: { title: 'Users' },
+          },
+          {
+            path: ':userId',
+            loadComponent: () => import('../dashboard/users/user/user'),
+            title: 'User Dashboard',
+            data: { title: 'Users Dashboard' },
+          },
+        ],
       },
       {
         path: 'subjects',

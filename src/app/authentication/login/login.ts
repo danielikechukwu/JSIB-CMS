@@ -1,50 +1,51 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, effect, inject, OnInit, signal } from '@angular/core';
+import { Form, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LoginForm } from './model/type';
 import { HotToastService } from '@ngxpert/hot-toast';
 import { NgClass } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
+import { form, Field, required, email, SchemaPathTree, submit } from '@angular/forms/signals';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, NgClass, RouterModule],
+  imports: [ReactiveFormsModule, NgClass, RouterModule, Field],
   templateUrl: './login.html',
   styleUrl: './login.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class Login implements OnInit {
   private _toast = inject(HotToastService);
   private router = inject(Router);
 
-  protected loginForm!: FormGroup<LoginForm>;
+  protected loginModel = signal<LoginForm>(this.initLoginFormData());
+  protected loginForm = form(this.loginModel, this.initLoginFormValidator());
 
-  ngOnInit(): void {
-    this.initForm();
-  }
+  ngOnInit(): void {}
 
-  initForm(): void {
-    this.loginForm = new FormGroup<LoginForm>({
-      email: new FormControl<string>('', {
-        nonNullable: true,
-        validators: [Validators.required, Validators.email],
-      }),
-      password: new FormControl<string>('', {
-        nonNullable: true,
-        validators: [Validators.required],
-      }),
+  onSubmit(event: Event): void {
+    event.preventDefault();
+    console.log(this.loginForm().value());
+    submit(this.loginForm, async () => {
+      const credentials = this.loginModel();
+      console.log('Logging in with:', credentials);
+      this.loginForm().reset(this.initLoginFormData());
+      this.router.navigateByUrl('/app');
+      // Add your login logic here
     });
   }
 
-  submitLoginForm(): void {
-    // if (this.loginForm.invalid) {
-    //   this._toast.error('Please fill required field');
-    //   this.loginForm.markAllAsTouched();
-    //   return;
-    // }
+  initLoginFormData(): LoginForm {
+    return {
+      email: '',
+      password: '',
+    };
+  }
 
-    const login = this.loginForm.getRawValue();
-
-    this.router.navigateByUrl('/app');
-
-    console.log('Login: ', this.loginForm.value);
+  initLoginFormValidator(): (fieldPath: SchemaPathTree<LoginForm>) => void {
+    return (fieldPath: SchemaPathTree<LoginForm>) => {
+      required(fieldPath.email, { message: 'Email is required' }),
+        email(fieldPath.email, { message: 'Enter a valid email address' }),
+        required(fieldPath.password, { message: 'Password is required' });
+    };
   }
 }

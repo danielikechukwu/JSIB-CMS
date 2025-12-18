@@ -157,7 +157,7 @@ body {
 }
 
 .form .form-container label {
- @apply text-black font-semibold capitalize text-xs
+ @apply text-black font-semibold first-letter:capitalize text-xs
 }
 
 .form-group .form-control {
@@ -187,7 +187,7 @@ body {
 
 /* Global table styling */
 table thead th {
-  @apply first-letter:uppercase border-t! border-gray-300! border-dashed! bg-[#FAFAFA]! py-5!
+  @apply first-letter:uppercase border-t! border-gray-300! border-dashed! bg-[#FAFAFA]! py-5! 
 }
 
 table tbody tr td {
@@ -198,6 +198,15 @@ table tbody {
   @apply ml-12!
 }
 
-table tbody tr:last-child {
-  @apply border-b-0! text-amber-300 bg-transparent! 
+tbody tr:last-child td  {
+  @apply border-b-0!
+}
+
+tbody tr:last-child {
+  @apply bg-transparent!
+}
+
+/* Global dialog styling */
+.p-dialog-header {
+  @apply py-0! pt-3! 
 }
