@@ -43,9 +43,9 @@ export default class Login {
 
   initLoginFormValidator(): (fieldPath: SchemaPathTree<LoginForm>) => void {
     return (fieldPath: SchemaPathTree<LoginForm>) => {
-      required(fieldPath.email, { message: 'Email is required' });
-      email(fieldPath.email, { message: 'Enter a valid email address' }),
-        required(fieldPath.password, { message: 'Password is required' });
+      (required(fieldPath.email, { message: 'Email is required' }),
+        email(fieldPath.email, { message: 'Enter a valid email address' }),
+        required(fieldPath.password, { message: 'Password is required' }));
     };
   }
 }

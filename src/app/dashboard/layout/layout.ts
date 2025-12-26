@@ -7,7 +7,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { Sidebar } from '../sidebar/sidebar';
+import Sidebar from '../sidebar/sidebar';
 import { Topbar } from '../topbar/topbar';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Store } from '../../store/store';
@@ -61,7 +61,7 @@ export default class Layout implements OnInit {
 
           this._store.updateStore({ routeDetail: routeDetail });
         }
-      })
-    )
+      }),
+    ),
   );
 }

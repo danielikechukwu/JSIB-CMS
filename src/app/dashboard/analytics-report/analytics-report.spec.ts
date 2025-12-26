@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AnalyticsReport } from './analytics-report';
+import AnalyticsReport from './analytics-report';
 
 describe('AnalyticsReport', () => {
   let component: AnalyticsReport;
@@ -8,9 +8,8 @@ describe('AnalyticsReport', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AnalyticsReport]
-    })
-    .compileComponents();
+      imports: [AnalyticsReport],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AnalyticsReport);
     component = fixture.componentInstance;

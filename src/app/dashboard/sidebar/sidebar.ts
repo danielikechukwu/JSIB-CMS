@@ -10,7 +10,7 @@ import { NgOptimizedImage } from '@angular/common';
   styleUrl: './sidebar.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Sidebar {
+export default class Sidebar {
   private _router = inject(Router);
   private _store = inject(Store);
 

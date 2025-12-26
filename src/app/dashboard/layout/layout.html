@@ -1,36 +1,56 @@
 <div class="flex flex-row h-full relative">
+  <!-- 521 x 440 -->
+  <div class="absolute inset-0 flex justify-center items-center z-0 opacity-3 pointer-events-none">
+    <img
+      ngSrc="/images/logo.png"
+      alt="finted watermark logo"
+      width="521"
+      height="440"
+      sizes="(max-width: 768px) 100vw, 50vw"
+      priority
+    />
+  </div>
 
-    <div class="absolute inset-0 flex justify-center items-center z-0 opacity-3 pointer-events-none">
-        <!-- <img ngSrc="/images/logo.png" alt="logo" width="347" height="293" priority> -->
-        <img ngSrc="/images/logo.png" alt="logo" width="447" height="377" priority>
-    </div>
-
-    @if(openSideNav()) {
-    <div class="w-full md:w-80! lg:w-75! border-r border-gray-300 fixed bg-white md:relative z-80 h-full"
-        animate.enter="enter-animation" animate.leave="leave-animation">
-        <div class="md:hidden absolute left-5 top-10 cursor-pointer" tabindex="0"
-            (click)="openSideNav.set(!openSideNav())" (keyup.enter)="openSideNav.set(!openSideNav())">
-            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-primary stroke-3 w-6 h-6" viewBox="0 0 24 24"
-                width="20" height="20" color="currentColor" fill="none" stroke="#141B34" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085" />
-            </svg>
-        </div>
-        <app-sidebar />
-    </div>
-    }
-
+  @if (openSideNav()) {
     <div
-        class="flex flex-col w-full overflow-y-auto border md:border-red-600 lg:border-green-800 xl:border-pink-500 relative">
-
-        <div class="sticky top-0 z-50 bg-white">
-            <app-topbar [(openSideNav)]="openSideNav" />
-        </div>
-
-        <div class="mx-6 my-10">
-            <router-outlet />
-        </div>
-
+      class="w-full md:w-80! lg:w-75! border-r border-gray-300 fixed bg-white md:relative z-80 h-full"
+      animate.enter="enter-animation"
+      animate.leave="leave-animation"
+    >
+      <div
+        class="md:hidden absolute left-5 top-10 cursor-pointer"
+        tabindex="0"
+        (click)="openSideNav.set(!openSideNav())"
+        (keyup.enter)="openSideNav.set(!openSideNav())"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="stroke-primary stroke-3 w-6 h-6"
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          color="currentColor"
+          fill="none"
+          stroke="#141B34"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M18 6L6.00081 17.9992M17.9992 18L6 6.00085" />
+        </svg>
+      </div>
+      <app-sidebar />
     </div>
+  }
 
+  <div
+    class="flex flex-col w-full overflow-y-auto border md:border-red-600 lg:border-green-800 xl:border-pink-500 relative"
+  >
+    <div class="sticky top-0 z-50 bg-white">
+      <app-topbar [(openSideNav)]="openSideNav" />
+    </div>
+    <div role="main" class="mx-6 my-10">
+      <router-outlet />
+    </div>
+  </div>
 </div>

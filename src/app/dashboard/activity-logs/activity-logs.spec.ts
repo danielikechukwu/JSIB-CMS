@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActivityLogs } from './activity-logs';
+import ActivityLogs from './activity-logs';
 
 describe('ActivityLogs', () => {
   let component: ActivityLogs;
@@ -8,9 +8,8 @@ describe('ActivityLogs', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ActivityLogs]
-    })
-    .compileComponents();
+      imports: [ActivityLogs],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ActivityLogs);
     component = fixture.componentInstance;

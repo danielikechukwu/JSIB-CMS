@@ -1,30 +1,43 @@
 <div class="flex flex-row border-b border-gray-300 items-center justify-between px-6 py-2">
-    <div class="flex flex-col gap-2">
-        <span class="font-black text-2xl first-letter:uppercase">
-            {{ _store.store().routeDetail.title }}
-        </span>
-        <span class="uppercase font-normal">
-            account type - admin cms
-        </span>
-    </div>
-    <div class="flex flex-row items-center gap-2">
+  <div class="flex flex-col gap-2">
+    <span class="font-black text-2xl first-letter:uppercase">
+      {{ _store.store().routeDetail.title }}
+    </span>
+    <span class="uppercase font-normal"> account type - admin cms </span>
+  </div>
+  <div class="flex flex-row items-center gap-2">
+    <svg
+      (click)="openSideNav.set(!openSideNav())"
+      tabindex="0"
+      (keyup.enter)="openSideNav.set(!openSideNav())"
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-6 h-6 cursor-pointer"
+      viewBox="0 0 24 24"
+      width="20"
+      height="20"
+      color="currentColor"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path
+        d="M21 11C21 7.22876 21 5.34315 19.8284 4.17157C18.6569 3 16.7712 3 13 3H11C7.22876 3 5.34315 3 4.17157 4.17157C3 5.34315 3 7.22876 3 11V13C3 16.7712 3 18.6569 4.17157 19.8284C5.34315 21 7.22876 21 11 21H13C16.7712 21 18.6569 21 19.8284 19.8284C21 18.6569 21 16.7712 21 13V11Z"
+      />
+      <path d="M9 3V21" />
+      <path
+        d="M14 9L15.1082 9.87868C16.3694 10.8787 17 11.3787 17 12C17 12.6213 16.3694 13.1213 15.1082 14.1213L14 15"
+      />
+    </svg>
 
-        <svg (click)="openSideNav.set(!openSideNav())" tabindex="0" (keyup.enter)="openSideNav.set(!openSideNav())"
-            xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 cursor-pointer" viewBox="0 0 24 24" width="20" height="20"
-            color="currentColor" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            stroke-linejoin="round">
-            <path
-                d="M21 11C21 7.22876 21 5.34315 19.8284 4.17157C18.6569 3 16.7712 3 13 3H11C7.22876 3 5.34315 3 4.17157 4.17157C3 5.34315 3 7.22876 3 11V13C3 16.7712 3 18.6569 4.17157 19.8284C5.34315 21 7.22876 21 11 21H13C16.7712 21 18.6569 21 19.8284 19.8284C21 18.6569 21 16.7712 21 13V11Z" />
-            <path d="M9 3V21" />
-            <path
-                d="M14 9L15.1082 9.87868C16.3694 10.8787 17 11.3787 17 12C17 12.6213 16.3694 13.1213 15.1082 14.1213L14 15" />
-        </svg>
-
-        <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
-                d="M25 4.16675C27.7359 4.16674 30.445 4.70559 32.9726 5.75256C35.5003 6.79953 37.7969 8.33409 39.7315 10.2686C41.666 12.2032 43.2006 14.4998 44.2476 17.0275C45.2946 19.5551 45.8335 22.2642 45.8335 25C45.8335 36.506 36.506 45.8335 25 45.8335C13.4942 45.8335 4.16675 36.506 4.16675 25C4.16675 13.4942 13.4942 4.16675 25 4.16675ZM27.0835 27.0835H22.9167C17.759 27.0835 13.331 30.2072 11.4211 34.6663C14.443 38.9037 19.3989 41.6667 25 41.6667C30.6012 41.6667 35.5571 38.9037 38.5791 34.666C36.6692 30.2072 32.2412 27.0835 27.0835 27.0835ZM25 10.4167C21.5483 10.4167 18.75 13.215 18.75 16.6667C18.75 20.1185 21.5483 22.9167 25 22.9167C28.4518 22.9167 31.25 20.1185 31.25 16.6667C31.25 13.215 28.4519 10.4167 25 10.4167Z"
-                fill="#25A249" />
-        </svg>
-
-    </div>
+    <svg width="40" height="40" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M25 4.16675C27.7359 4.16674 30.445 4.70559 32.9726 5.75256C35.5003 6.79953 37.7969 8.33409 39.7315 10.2686C41.666 12.2032 43.2006 14.4998 44.2476 17.0275C45.2946 19.5551 45.8335 22.2642 45.8335 25C45.8335 36.506 36.506 45.8335 25 45.8335C13.4942 45.8335 4.16675 36.506 4.16675 25C4.16675 13.4942 13.4942 4.16675 25 4.16675ZM27.0835 27.0835H22.9167C17.759 27.0835 13.331 30.2072 11.4211 34.6663C14.443 38.9037 19.3989 41.6667 25 41.6667C30.6012 41.6667 35.5571 38.9037 38.5791 34.666C36.6692 30.2072 32.2412 27.0835 27.0835 27.0835ZM25 10.4167C21.5483 10.4167 18.75 13.215 18.75 16.6667C18.75 20.1185 21.5483 22.9167 25 22.9167C28.4518 22.9167 31.25 20.1185 31.25 16.6667C31.25 13.215 28.4519 10.4167 25 10.4167Z"
+        fill="#25A249"
+      />
+    </svg>
+  </div>
 </div>

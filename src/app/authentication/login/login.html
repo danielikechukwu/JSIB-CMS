@@ -1,60 +1,76 @@
 <div class="flex flex-row h-full">
-
-    <div
-        class="bg-[url('/images/login-banner.jpg')] hidden md:block bg-right bg-cover w-[56%] bg-primary-light bg-blend-multiply">
-        <div class="flex">
-            <div class="flex flex-row items-center gap-3 my-10 ml-10">
-                <img ngSrc="/images/logo.svg" alt="logo" width="88" height="75" priority>
-                <span class="uppercase font-black text-lg!">remote authoring cms</span>
-            </div>
-        </div>
+  <div
+    class="bg-[url('/images/login-banner.jpg')] hidden md:block bg-right bg-cover w-[56%] bg-primary-light bg-blend-multiply"
+  >
+    <div class="flex">
+      <div class="flex flex-row items-center gap-3 my-10 ml-10">
+        <img ngSrc="/images/logo.svg" alt="logo" width="88" height="75" priority />
+        <span class="uppercase font-black text-lg!">remote authoring cms</span>
+      </div>
     </div>
+  </div>
 
-    <div class="md:w-[44%] w-full flex">
-
-        <div class="w-full flex flex-col gap-5 justify-center">
-            <img ngSrc="/images/logo.svg" alt="" width="146" height="125" class="self-center" priority>
-            <div class="flex flex-col gap-3">
-                <span class="first-letter:uppercase font-bold text-center text-2xl">login to your account</span>
-                <span class="first-letter:uppercase font-medium text-gray-500 text-sm text-center">enter your details
-                    below to login
-                    to your
-                    account</span>
+  <div class="md:w-[44%] w-full flex">
+    <div class="w-full flex flex-col gap-5 justify-center">
+      <img ngSrc="/images/logo.svg" alt="" width="146" height="125" class="self-center" priority />
+      <div class="flex flex-col gap-3">
+        <span class="first-letter:uppercase font-bold text-center text-2xl"
+          >login to your account</span
+        >
+        <span class="first-letter:uppercase font-medium text-gray-500 text-sm text-center"
+          >enter your details below to login to your account</span
+        >
+      </div>
+      <div class="mx-4 md:mx-10! lg:mx-19!">
+        <form class="form" (submit)="onSubmit($event)" novalidate>
+          <div class="form-container">
+            <div class="form-group">
+              <label for="email-input">email</label>
+              <input
+                id="email-input"
+                type="text"
+                [field]="loginForm.email"
+                autocomplete="new-email"
+                class="form-control"
+                [ngClass]="{
+                  'border border-red-400!':
+                    loginForm.email().invalid() && loginForm.email().touched(),
+                }"
+                placeholder="enter email"
+              />
+              @if (loginForm.email().invalid() && loginForm.email().touched()) {
+                <div class="control-error">
+                  @for (error of loginForm.email().errors(); track error.kind) {
+                    <span>{{ error.message }}</span>
+                  }
+                </div>
+              }
             </div>
-            <div class="mx-4 md:mx-10! lg:mx-19!">
-                <form class="form" (submit)="onSubmit($event)" novalidate>
-                    <div class="form-container">
-                        <div class="form-group">
-                            <label for="email-input">email</label>
-                            <input id="email-input" type="text" [field]="loginForm.email" autocomplete="new-email"
-                                class="form-control"
-                                [ngClass]="{'border border-red-400!': loginForm.email().invalid() && loginForm.email().touched()}"
-                                placeholder="enter email">
-                            @if(loginForm.email().invalid() && loginForm.email().touched()) {
-                            <div class="control-error">
-                                @for (error of loginForm.email().errors(); track error.kind) {
-                                <span>{{ error.message }}</span>
-                                }
-                            </div>
-                            }
-                        </div>
-                        <div class="form-group">
-                            <label for="password-input">password</label>
-                            <input id="password-input" type="password" [field]="loginForm.password" class="form-control"
-                                [ngClass]="{'border border-red-400!': loginForm.password().invalid() && loginForm.password().touched()}"
-                                placeholder="enter password">
-                            @if(loginForm.password().invalid() && loginForm.password().touched()) {
-                            <div class="control-error">
-                                @for (error of loginForm.password().errors(); track error.kind) {
-                                <span>{{ error.message }}</span>
-                                }
-                            </div>
-                            }
-                        </div>
-                        <button type="submit" class="btn font-semibold">sign in</button>
-                    </div>
-                </form>
+            <div class="form-group">
+              <label for="password-input">password</label>
+              <input
+                id="password-input"
+                type="password"
+                [field]="loginForm.password"
+                class="form-control"
+                [ngClass]="{
+                  'border border-red-400!':
+                    loginForm.password().invalid() && loginForm.password().touched(),
+                }"
+                placeholder="enter password"
+              />
+              @if (loginForm.password().invalid() && loginForm.password().touched()) {
+                <div class="control-error">
+                  @for (error of loginForm.password().errors(); track error.kind) {
+                    <span>{{ error.message }}</span>
+                  }
+                </div>
+              }
             </div>
-        </div>
+            <button type="submit" class="btn font-semibold">sign in</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>

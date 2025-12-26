@@ -59,7 +59,7 @@ export default class User {
   protected updateUserForm = form(this.updateUserModel, this.initUpdateUserFormValidation());
   protected createNewUserForm = form(
     this.createNewUserModel,
-    this.initCreateNewUserFormValidation()
+    this.initCreateNewUserFormValidation(),
   );
   protected status = Status;
 
@@ -113,18 +113,18 @@ export default class User {
 
   initCreateNewUserFormValidation(): (fieldPath: SchemaPathTree<CreateNewUser>) => void {
     return (fieldPath: SchemaPathTree<CreateNewUser>) => {
-      email(fieldPath.email, { message: 'enter a validate email address' }),
+      (email(fieldPath.email, { message: 'enter a validate email address' }),
         required(fieldPath.email, { message: 'email is required' }),
         required(fieldPath.firstName, { message: 'first name is required' }),
         required(fieldPath.lastName, { message: 'last name is required' }),
         required(fieldPath.role, { message: 'role is required' }),
-        required(fieldPath.title, { message: 'title is required' });
+        required(fieldPath.title, { message: 'title is required' }));
     };
   }
 
   initUpdateUserFormValidation(): (fieldPath: SchemaPathTree<UpdateUser>) => void {
     return (fieldPath: SchemaPathTree<UpdateUser>) => {
-      required(fieldPath.institution, { message: 'institution is required' }),
+      (required(fieldPath.institution, { message: 'institution is required' }),
         required(fieldPath.firstName, { message: 'first name is required' }),
         required(fieldPath.lastName, { message: 'last name is required' }),
         required(fieldPath.department, { message: 'department is required' }),
@@ -133,7 +133,7 @@ export default class User {
         required(fieldPath.alternativePhoneNumber, {
           message: 'alternative phone number is required',
         }),
-        required(fieldPath.title, { message: 'title is required' });
+        required(fieldPath.title, { message: 'title is required' }));
     };
   }
 

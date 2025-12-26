@@ -1,567 +1,828 @@
 <div>
-
-    <!-- Cards -->
-    <div>
-
-        <div class="flex flex-col gap-6">
-            <div class="flex justify-end">
-                <button type="button" class="btn" (click)="showCreateNewUserModal.set(!showCreateNewUserModal())">create
-                    a
-                    user</button>
-            </div>
-            <div>
-
-            </div>
-            <div class="grid grid-cols-1! md:grid-cols-2! gap-6">
-                <div class="border border-gray-300 rounded-2xl p-4 flex flex-row justify-between">
-                    <div class="flex flex-col gap-3">
-                        <span class="capitalize font-normal text-xs text-black">total user</span>
-                        <span class="font-black text-3xl">37</span>
-                        <div class="flex flex-row items-center gap-1">
-                            <span><svg width="14" height="14" viewBox="0 0 14 14" class="w-2! h-2!" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6.66667 13.3333C2.98467 13.3333 0 10.3487 0 6.66667C0 2.98467 2.98467 0 6.66667 0C10.3487 0 13.3333 2.98467 13.3333 6.66667C13.3333 10.3487 10.3487 13.3333 6.66667 13.3333ZM6.66667 12C8.08115 12 9.43771 11.4381 10.4379 10.4379C11.4381 9.43771 12 8.08115 12 6.66667C12 5.25218 11.4381 3.89562 10.4379 2.89543C9.43771 1.89524 8.08115 1.33333 6.66667 1.33333C5.25218 1.33333 3.89562 1.89524 2.89543 2.89543C1.89524 3.89562 1.33333 5.25218 1.33333 6.66667C1.33333 8.08115 1.89524 9.43771 2.89543 10.4379C3.89562 11.4381 5.25218 12 6.66667 12ZM6.66667 5.33333C6.84348 5.33333 7.01305 5.40357 7.13807 5.5286C7.26309 5.65362 7.33333 5.82319 7.33333 6V9.33333C7.33333 9.51014 7.26309 9.67971 7.13807 9.80474C7.01305 9.92976 6.84348 10 6.66667 10C6.48986 10 6.32029 9.92976 6.19526 9.80474C6.07024 9.67971 6 9.51014 6 9.33333V6C6 5.82319 6.07024 5.65362 6.19526 5.5286C6.32029 5.40357 6.48986 5.33333 6.66667 5.33333ZM6.66667 4.66667C6.48986 4.66667 6.32029 4.59643 6.19526 4.4714C6.07024 4.34638 6 4.17681 6 4C6 3.82319 6.07024 3.65362 6.19526 3.5286C6.32029 3.40357 6.48986 3.33333 6.66667 3.33333C6.84348 3.33333 7.01305 3.40357 7.13807 3.5286C7.26309 3.65362 7.33333 3.82319 7.33333 4C7.33333 4.17681 7.26309 4.34638 7.13807 4.4714C7.01305 4.59643 6.84348 4.66667 6.66667 4.66667Z"
-                                        fill="#25A249" />
-                                </svg>
-                            </span>
-                            <span class="first-letter:uppercase text-[0.7rem] text-primary font-light">this is the total
-                                number of
-                                users currently
-                                registered</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="p-3 rounded-full bg-primary-light">
-                            <svg width="24" height="24" viewBox="0 0 24 24" class="w-5! h-5!" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M9 13C11.2091 13 13 11.2091 13 9C13 6.79086 11.2091 5 9 5C6.79086 5 5 6.79086 5 9C5 11.2091 6.79086 13 9 13Z"
-                                    stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                <path
-                                    d="M16 19C16 15.686 12.866 13 9 13C5.134 13 2 15.686 2 19M15 13C15.6684 13 16.3261 12.8324 16.9131 12.5127C17.5 12.193 17.9975 11.7313 18.3601 11.1698C18.7227 10.6083 18.9388 9.96494 18.9886 9.29841C19.0385 8.63189 18.9205 7.9635 18.6456 7.3543C18.3706 6.7451 17.9473 6.21453 17.4144 5.81105C16.8816 5.40757 16.2561 5.14404 15.5952 5.04456C14.9342 4.94507 14.2589 5.01279 13.6309 5.24154C13.0028 5.47028 12.4421 5.85275 12 6.354"
-                                    stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M22 19C22 15.686 18.866 13 15 13C14.193 13 12.897 12.707 12 11.765"
-                                    stroke="#292929" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="border border-gray-300 rounded-2xl p-4 flex flex-row justify-between">
-                    <div class="flex flex-col gap-3">
-                        <span class="capitalize font-normal text-xs text-black">active users</span>
-                        <span class="font-black text-3xl">20</span>
-                        <div class="flex flex-row items-center gap-1">
-                            <span>
-                                <svg width="14" height="14" viewBox="0 0 14 14" class="w-2! h-2!" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6.66667 13.3333C2.98467 13.3333 0 10.3487 0 6.66667C0 2.98467 2.98467 0 6.66667 0C10.3487 0 13.3333 2.98467 13.3333 6.66667C13.3333 10.3487 10.3487 13.3333 6.66667 13.3333ZM6.66667 12C8.08115 12 9.43771 11.4381 10.4379 10.4379C11.4381 9.43771 12 8.08115 12 6.66667C12 5.25218 11.4381 3.89562 10.4379 2.89543C9.43771 1.89524 8.08115 1.33333 6.66667 1.33333C5.25218 1.33333 3.89562 1.89524 2.89543 2.89543C1.89524 3.89562 1.33333 5.25218 1.33333 6.66667C1.33333 8.08115 1.89524 9.43771 2.89543 10.4379C3.89562 11.4381 5.25218 12 6.66667 12ZM6.66667 5.33333C6.84348 5.33333 7.01305 5.40357 7.13807 5.5286C7.26309 5.65362 7.33333 5.82319 7.33333 6V9.33333C7.33333 9.51014 7.26309 9.67971 7.13807 9.80474C7.01305 9.92976 6.84348 10 6.66667 10C6.48986 10 6.32029 9.92976 6.19526 9.80474C6.07024 9.67971 6 9.51014 6 9.33333V6C6 5.82319 6.07024 5.65362 6.19526 5.5286C6.32029 5.40357 6.48986 5.33333 6.66667 5.33333ZM6.66667 4.66667C6.48986 4.66667 6.32029 4.59643 6.19526 4.4714C6.07024 4.34638 6 4.17681 6 4C6 3.82319 6.07024 3.65362 6.19526 3.5286C6.32029 3.40357 6.48986 3.33333 6.66667 3.33333C6.84348 3.33333 7.01305 3.40357 7.13807 3.5286C7.26309 3.65362 7.33333 3.82319 7.33333 4C7.33333 4.17681 7.26309 4.34638 7.13807 4.4714C7.01305 4.59643 6.84348 4.66667 6.66667 4.66667Z"
-                                        fill="#25A249" />
-                                </svg>
-                            </span>
-                            <span class="first-letter:uppercase text-[0.7rem]! text-primary font-light">this is the
-                                total
-                                number of
-                                users currently
-                                registered</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="p-3 rounded-full bg-primary-light">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5! h-5!" width="20"
-                                height="20" color="currentColor" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round">
-                                <path d="M6.5 17.5L6.5 14.5M11.5 17.5L11.5 8.5M16.5 17.5V13.5" />
-                                <path
-                                    d="M21.5 5.5C21.5 7.15685 20.1569 8.5 18.5 8.5C16.8431 8.5 15.5 7.15685 15.5 5.5C15.5 3.84315 16.8431 2.5 18.5 2.5C20.1569 2.5 21.5 3.84315 21.5 5.5Z" />
-                                <path
-                                    d="M21.4955 11C21.4955 11 21.5 11.3395 21.5 12C21.5 16.4784 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4784 2.5 12C2.5 7.52169 2.5 5.28252 3.89124 3.89127C5.28249 2.50003 7.52166 2.50003 12 2.50003L13 2.5" />
-                            </svg>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div>
-
-        </div>
-    </div>
-
-    <!-- Table  -->
-    <div class="mt-14 border border-gray-300 rounded-2xl pb-4">
-        <div class="mt-10 flex flex-row gap-4 px-4 items-center">
-            <div (click)="filterByRole.toggle($event)" tabindex="0" (keyup.enter)="filterByRole.toggle($event)"
-                class="flex flex-row gap-2 items-center justify-center rounded-md border border-gray-300 px-3 basis-2/6! md:basis-1/6! cursor-pointer h-8">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="currentColor"
-                    fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 6H21" />
-                    <path d="M6 12H18" />
-                    <path d="M9 18H15" />
+  <!-- Cards -->
+  <div>
+    <div class="flex flex-col gap-6">
+      <div class="flex justify-end">
+        <button
+          type="button"
+          class="btn"
+          (click)="showCreateNewUserModal.set(!showCreateNewUserModal())"
+        >
+          create a user
+        </button>
+      </div>
+      <div></div>
+      <div class="grid grid-cols-1! md:grid-cols-2! gap-6">
+        <div class="border border-gray-300 rounded-2xl p-4 flex flex-row justify-between">
+          <div class="flex flex-col gap-3">
+            <span class="capitalize font-normal text-xs text-black">total user</span>
+            <span class="font-black text-3xl">37</span>
+            <div class="flex flex-row items-center gap-1">
+              <span
+                ><svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  class="w-2! h-2!"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.66667 13.3333C2.98467 13.3333 0 10.3487 0 6.66667C0 2.98467 2.98467 0 6.66667 0C10.3487 0 13.3333 2.98467 13.3333 6.66667C13.3333 10.3487 10.3487 13.3333 6.66667 13.3333ZM6.66667 12C8.08115 12 9.43771 11.4381 10.4379 10.4379C11.4381 9.43771 12 8.08115 12 6.66667C12 5.25218 11.4381 3.89562 10.4379 2.89543C9.43771 1.89524 8.08115 1.33333 6.66667 1.33333C5.25218 1.33333 3.89562 1.89524 2.89543 2.89543C1.89524 3.89562 1.33333 5.25218 1.33333 6.66667C1.33333 8.08115 1.89524 9.43771 2.89543 10.4379C3.89562 11.4381 5.25218 12 6.66667 12ZM6.66667 5.33333C6.84348 5.33333 7.01305 5.40357 7.13807 5.5286C7.26309 5.65362 7.33333 5.82319 7.33333 6V9.33333C7.33333 9.51014 7.26309 9.67971 7.13807 9.80474C7.01305 9.92976 6.84348 10 6.66667 10C6.48986 10 6.32029 9.92976 6.19526 9.80474C6.07024 9.67971 6 9.51014 6 9.33333V6C6 5.82319 6.07024 5.65362 6.19526 5.5286C6.32029 5.40357 6.48986 5.33333 6.66667 5.33333ZM6.66667 4.66667C6.48986 4.66667 6.32029 4.59643 6.19526 4.4714C6.07024 4.34638 6 4.17681 6 4C6 3.82319 6.07024 3.65362 6.19526 3.5286C6.32029 3.40357 6.48986 3.33333 6.66667 3.33333C6.84348 3.33333 7.01305 3.40357 7.13807 3.5286C7.26309 3.65362 7.33333 3.82319 7.33333 4C7.33333 4.17681 7.26309 4.34638 7.13807 4.4714C7.01305 4.59643 6.84348 4.66667 6.66667 4.66667Z"
+                    fill="#25A249"
+                  />
                 </svg>
-                <span class="text-black">
-                    Filter&nbsp;by&nbsp;Roles
-                </span>
+              </span>
+              <span class="first-letter:uppercase text-[0.7rem] text-primary font-light"
+                >this is the total number of users currently registered</span
+              >
             </div>
-            <div class="relative basis-4/6! md:basis-4/6!">
-                <input type="text" aria-label="search-users" placeholder="search users"
-                    class="form-control w-full rounded-md! py-2.5! pl-10!">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 absolute left-5 top-2.5 stroke-gray-400"
-                    viewBox="0 0 24 24" width="20" height="20" color="currentColor" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M17 17L21 21" />
+          </div>
+          <div>
+            <div class="p-3 rounded-full bg-primary-light">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                class="w-5! h-5!"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 13C11.2091 13 13 11.2091 13 9C13 6.79086 11.2091 5 9 5C6.79086 5 5 6.79086 5 9C5 11.2091 6.79086 13 9 13Z"
+                  stroke="#292929"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16 19C16 15.686 12.866 13 9 13C5.134 13 2 15.686 2 19M15 13C15.6684 13 16.3261 12.8324 16.9131 12.5127C17.5 12.193 17.9975 11.7313 18.3601 11.1698C18.7227 10.6083 18.9388 9.96494 18.9886 9.29841C19.0385 8.63189 18.9205 7.9635 18.6456 7.3543C18.3706 6.7451 17.9473 6.21453 17.4144 5.81105C16.8816 5.40757 16.2561 5.14404 15.5952 5.04456C14.9342 4.94507 14.2589 5.01279 13.6309 5.24154C13.0028 5.47028 12.4421 5.85275 12 6.354"
+                  stroke="#292929"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M22 19C22 15.686 18.866 13 15 13C14.193 13 12.897 12.707 12 11.765"
+                  stroke="#292929"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="border border-gray-300 rounded-2xl p-4 flex flex-row justify-between">
+          <div class="flex flex-col gap-3">
+            <span class="capitalize font-normal text-xs text-black">active users</span>
+            <span class="font-black text-3xl">20</span>
+            <div class="flex flex-row items-center gap-1">
+              <span>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 14 14"
+                  class="w-2! h-2!"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6.66667 13.3333C2.98467 13.3333 0 10.3487 0 6.66667C0 2.98467 2.98467 0 6.66667 0C10.3487 0 13.3333 2.98467 13.3333 6.66667C13.3333 10.3487 10.3487 13.3333 6.66667 13.3333ZM6.66667 12C8.08115 12 9.43771 11.4381 10.4379 10.4379C11.4381 9.43771 12 8.08115 12 6.66667C12 5.25218 11.4381 3.89562 10.4379 2.89543C9.43771 1.89524 8.08115 1.33333 6.66667 1.33333C5.25218 1.33333 3.89562 1.89524 2.89543 2.89543C1.89524 3.89562 1.33333 5.25218 1.33333 6.66667C1.33333 8.08115 1.89524 9.43771 2.89543 10.4379C3.89562 11.4381 5.25218 12 6.66667 12ZM6.66667 5.33333C6.84348 5.33333 7.01305 5.40357 7.13807 5.5286C7.26309 5.65362 7.33333 5.82319 7.33333 6V9.33333C7.33333 9.51014 7.26309 9.67971 7.13807 9.80474C7.01305 9.92976 6.84348 10 6.66667 10C6.48986 10 6.32029 9.92976 6.19526 9.80474C6.07024 9.67971 6 9.51014 6 9.33333V6C6 5.82319 6.07024 5.65362 6.19526 5.5286C6.32029 5.40357 6.48986 5.33333 6.66667 5.33333ZM6.66667 4.66667C6.48986 4.66667 6.32029 4.59643 6.19526 4.4714C6.07024 4.34638 6 4.17681 6 4C6 3.82319 6.07024 3.65362 6.19526 3.5286C6.32029 3.40357 6.48986 3.33333 6.66667 3.33333C6.84348 3.33333 7.01305 3.40357 7.13807 3.5286C7.26309 3.65362 7.33333 3.82319 7.33333 4C7.33333 4.17681 7.26309 4.34638 7.13807 4.4714C7.01305 4.59643 6.84348 4.66667 6.66667 4.66667Z"
+                    fill="#25A249"
+                  />
+                </svg>
+              </span>
+              <span class="first-letter:uppercase text-[0.7rem]! text-primary font-light"
+                >this is the total number of users currently registered</span
+              >
+            </div>
+          </div>
+          <div>
+            <div class="p-3 rounded-full bg-primary-light">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                class="w-5! h-5!"
+                width="20"
+                height="20"
+                color="currentColor"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <path d="M6.5 17.5L6.5 14.5M11.5 17.5L11.5 8.5M16.5 17.5V13.5" />
+                <path
+                  d="M21.5 5.5C21.5 7.15685 20.1569 8.5 18.5 8.5C16.8431 8.5 15.5 7.15685 15.5 5.5C15.5 3.84315 16.8431 2.5 18.5 2.5C20.1569 2.5 21.5 3.84315 21.5 5.5Z"
+                />
+                <path
+                  d="M21.4955 11C21.4955 11 21.5 11.3395 21.5 12C21.5 16.4784 21.5 18.7175 20.1088 20.1088C18.7175 21.5 16.4783 21.5 12 21.5C7.52166 21.5 5.28249 21.5 3.89124 20.1088C2.5 18.7175 2.5 16.4784 2.5 12C2.5 7.52169 2.5 5.28252 3.89124 3.89127C5.28249 2.50003 7.52166 2.50003 12 2.50003L13 2.5"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </div>
+
+  <!-- Table  -->
+  <div class="mt-14 border border-gray-300 rounded-2xl pb-4">
+    <div class="mt-10 flex flex-row gap-4 px-4 items-center">
+      <div
+        (click)="filterByRole.toggle($event)"
+        tabindex="0"
+        (keyup.enter)="filterByRole.toggle($event)"
+        class="flex flex-row gap-2 items-center justify-center rounded-md border border-gray-300 px-3 basis-2/6! md:basis-1/6! cursor-pointer h-8"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          color="currentColor"
+          fill="none"
+          stroke="black"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M3 6H21" />
+          <path d="M6 12H18" />
+          <path d="M9 18H15" />
+        </svg>
+        <span class="text-black"> Filter&nbsp;by&nbsp;Roles </span>
+      </div>
+      <div class="relative basis-4/6! md:basis-4/6!">
+        <input
+          type="text"
+          aria-label="search-users"
+          placeholder="search users"
+          class="form-control w-full rounded-md! py-2.5! pl-10!"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4 absolute left-5 top-2.5 stroke-gray-400"
+          viewBox="0 0 24 24"
+          width="20"
+          height="20"
+          color="currentColor"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M17 17L21 21" />
+          <path
+            d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div class="mt-4">
+      <p-table [value]="users" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template #header>
+          <tr class="tr">
+            <th>title</th>
+            <th>first&nbsp;name</th>
+            <th>last&nbsp;name</th>
+            <th>institution</th>
+            <th>department</th>
+            <th>role</th>
+            <th>email</th>
+            <th>status</th>
+            <th>action</th>
+            <th></th>
+          </tr>
+        </ng-template>
+        <ng-template #body let-user class="tbody">
+          <tr>
+            <td>{{ user.title }}</td>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td>{{ user.institution }}</td>
+            <td>{{ user.department }}</td>
+            <td>
+              <span class="text-xs text-primary flex flex-row items-center first-letter:capitalize!"
+                ><span class="text-gray-700 capitalize mr-1">{{ user.role[0] }}</span>
+                @if (user.role.length > 1) {
+                  +{{ user.role.length - 1 }}
+                  <svg
+                    width="10"
+                    height="10"
+                    class="ml-1"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
-                        d="M19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19C15.4183 19 19 15.4183 19 11Z" />
+                      d="M4.81481 9.62963C2.15559 9.62963 0 7.47404 0 4.81481C0 2.15559 2.15559 0 4.81481 0C7.47404 0 9.62963 2.15559 9.62963 4.81481C9.62963 7.47404 7.47404 9.62963 4.81481 9.62963ZM4.81481 8.66667C5.83639 8.66667 6.81612 8.26085 7.53849 7.53849C8.26085 6.81612 8.66667 5.83639 8.66667 4.81481C8.66667 3.79324 8.26085 2.81351 7.53849 2.09114C6.81612 1.36878 5.83639 0.962963 4.81481 0.962963C3.79324 0.962963 2.81351 1.36878 2.09114 2.09114C1.36878 2.81351 0.962963 3.79324 0.962963 4.81481C0.962963 5.83639 1.36878 6.81612 2.09114 7.53849C2.81351 8.26085 3.79324 8.66667 4.81481 8.66667ZM4.81481 3.85185C4.94251 3.85185 5.06498 3.90258 5.15527 3.99287C5.24557 4.08317 5.2963 4.20564 5.2963 4.33333V6.74074C5.2963 6.86844 5.24557 6.9909 5.15527 7.0812C5.06498 7.17149 4.94251 7.22222 4.81481 7.22222C4.68712 7.22222 4.56465 7.17149 4.47436 7.0812C4.38406 6.9909 4.33333 6.86844 4.33333 6.74074V4.33333C4.33333 4.20564 4.38406 4.08317 4.47436 3.99287C4.56465 3.90258 4.68712 3.85185 4.81481 3.85185ZM4.81481 3.37037C4.68712 3.37037 4.56465 3.31964 4.47436 3.22935C4.38406 3.13905 4.33333 3.01659 4.33333 2.88889C4.33333 2.76119 4.38406 2.63873 4.47436 2.54843C4.56465 2.45813 4.68712 2.40741 4.81481 2.40741C4.94251 2.40741 5.06498 2.45813 5.15527 2.54843C5.24557 2.63873 5.2963 2.76119 5.2963 2.88889C5.2963 3.01659 5.24557 3.13905 5.15527 3.22935C5.06498 3.31964 4.94251 3.37037 4.81481 3.37037Z"
+                      fill="#008000"
+                    />
+                  </svg>
+                }
+              </span>
+            </td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.status }}</td>
+            <td>
+              @if (user.status === status.Inactive) {
+                <span
+                  class="border border-gray-300 p-1.5 px-3 rounded-md cursor-pointer"
+                  (click)="enableUser()"
+                  tabindex="0"
+                  (keyup.enter)="enableUser()"
+                  >enable</span
+                >
+              }
+              @if (user.status === status.Active) {
+                <span
+                  class="border border-red-400 p-1.5 px-3 rounded-md text-red-400 cursor-pointer"
+                  (click)="disableUser()"
+                  tabindex="0"
+                  (keyup.enter)="disableUser()"
+                  >disable</span
+                >
+              }
+            </td>
+            <td>
+              <span
+                (click)="userTableAction.toggle($event)"
+                tabindex="0"
+                (keyup.enter)="userTableAction.toggle($event)"
+              >
+                <svg
+                  width="18"
+                  height="3"
+                  viewBox="0 0 18 3"
+                  class="cursor-pointer w-4 h-4"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.5 0C0.675 0 0 0.675 0 1.5C0 2.325 0.675 3 1.5 3C2.325 3 3 2.325 3 1.5C3 0.675 2.325 0 1.5 0ZM16.5 0C15.675 0 15 0.675 15 1.5C15 2.325 15.675 3 16.5 3C17.325 3 18 2.325 18 1.5C18 0.675 17.325 0 16.5 0ZM9 0C8.175 0 7.5 0.675 7.5 1.5C7.5 2.325 8.175 3 9 3C9.825 3 10.5 2.325 10.5 1.5C10.5 0.675 9.825 0 9 0Z"
+                    fill="#292929"
+                  />
                 </svg>
-            </div>
-        </div>
-        <div class="mt-4">
-            <p-table [value]="users" [tableStyle]="{ 'min-width': '50rem' }">
-                <ng-template #header>
-                    <tr class="tr">
-                        <th>title</th>
-                        <th>first&nbsp;name</th>
-                        <th>last&nbsp;name</th>
-                        <th>institution</th>
-                        <th>department</th>
-                        <th>role</th>
-                        <th>email</th>
-                        <th>status</th>
-                        <th>action</th>
-                        <th></th>
-                    </tr>
-                </ng-template>
-                <ng-template #body let-user class="tbody">
-                    <tr>
-                        <td>{{user.title}}</td>
-                        <td>{{user.first_name}}</td>
-                        <td>{{user.last_name}}</td>
-                        <td>{{user.institution}}</td>
-                        <td>{{user.department}}</td>
-                        <td>
-                            <span class="text-xs text-primary flex flex-row items-center first-letter:capitalize!"><span
-                                    class="text-gray-700 capitalize mr-1">{{user.role[0]}}</span>
-                                @if(user.role.length > 1) {
-                                +{{user.role.length - 1}} <svg width="10" height="10" class="ml-1" viewBox="0 0 10 10"
-                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M4.81481 9.62963C2.15559 9.62963 0 7.47404 0 4.81481C0 2.15559 2.15559 0 4.81481 0C7.47404 0 9.62963 2.15559 9.62963 4.81481C9.62963 7.47404 7.47404 9.62963 4.81481 9.62963ZM4.81481 8.66667C5.83639 8.66667 6.81612 8.26085 7.53849 7.53849C8.26085 6.81612 8.66667 5.83639 8.66667 4.81481C8.66667 3.79324 8.26085 2.81351 7.53849 2.09114C6.81612 1.36878 5.83639 0.962963 4.81481 0.962963C3.79324 0.962963 2.81351 1.36878 2.09114 2.09114C1.36878 2.81351 0.962963 3.79324 0.962963 4.81481C0.962963 5.83639 1.36878 6.81612 2.09114 7.53849C2.81351 8.26085 3.79324 8.66667 4.81481 8.66667ZM4.81481 3.85185C4.94251 3.85185 5.06498 3.90258 5.15527 3.99287C5.24557 4.08317 5.2963 4.20564 5.2963 4.33333V6.74074C5.2963 6.86844 5.24557 6.9909 5.15527 7.0812C5.06498 7.17149 4.94251 7.22222 4.81481 7.22222C4.68712 7.22222 4.56465 7.17149 4.47436 7.0812C4.38406 6.9909 4.33333 6.86844 4.33333 6.74074V4.33333C4.33333 4.20564 4.38406 4.08317 4.47436 3.99287C4.56465 3.90258 4.68712 3.85185 4.81481 3.85185ZM4.81481 3.37037C4.68712 3.37037 4.56465 3.31964 4.47436 3.22935C4.38406 3.13905 4.33333 3.01659 4.33333 2.88889C4.33333 2.76119 4.38406 2.63873 4.47436 2.54843C4.56465 2.45813 4.68712 2.40741 4.81481 2.40741C4.94251 2.40741 5.06498 2.45813 5.15527 2.54843C5.24557 2.63873 5.2963 2.76119 5.2963 2.88889C5.2963 3.01659 5.24557 3.13905 5.15527 3.22935C5.06498 3.31964 4.94251 3.37037 4.81481 3.37037Z"
-                                        fill="#008000" />
-                                </svg>
-                                }
-                            </span>
-                        </td>
-                        <td>{{user.email}}</td>
-                        <td>{{user.status}}</td>
-                        <td>
-                            @if(user.status === status.Inactive) {
-                            <span class="border border-gray-300 p-1.5 px-3 rounded-md cursor-pointer"
-                                (click)="enableUser()" tabindex="0" (keyup.enter)="enableUser()">enable</span>
-                            }
-                            @if(user.status === status.Active) {
-                            <span class="border border-red-400 p-1.5 px-3 rounded-md text-red-400 cursor-pointer"
-                                (click)="disableUser()" tabindex="0" (keyup.enter)="disableUser()">disable</span>
-                            }
-                        </td>
-                        <td>
-                            <span (click)="userTableAction.toggle($event)" tabindex="0"
-                                (keyup.enter)="userTableAction.toggle($event)">
-                                <svg width="18" height="3" viewBox="0 0 18 3" class="cursor-pointer w-4 h-4" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M1.5 0C0.675 0 0 0.675 0 1.5C0 2.325 0.675 3 1.5 3C2.325 3 3 2.325 3 1.5C3 0.675 2.325 0 1.5 0ZM16.5 0C15.675 0 15 0.675 15 1.5C15 2.325 15.675 3 16.5 3C17.325 3 18 2.325 18 1.5C18 0.675 17.325 0 16.5 0ZM9 0C8.175 0 7.5 0.675 7.5 1.5C7.5 2.325 8.175 3 9 3C9.825 3 10.5 2.325 10.5 1.5C10.5 0.675 9.825 0 9 0Z"
-                                        fill="#292929" />
-                                </svg>
-                            </span>
+              </span>
 
-                            <!-- User table action popover -->
-                            <p-popover #userTableAction>
-                                <div class="w-35">
-                                    <div class="flex flex-col">
-                                        <span
-                                            class="p-2 rounded-md capitalize hover:bg-primary-light cursor-pointer flex flex-row gap-1 items-center"
-                                            (click)="assignRole.toggle($event)" tabindex="0"
-                                            (keyup.enter)="assignRole.toggle($event)">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
-                                                height="20" color="currentColor" fill="none" stroke="#141B34"
-                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M12.001 5.00003V19.002" />
-                                                <path d="M19.002 12.002L4.99998 12.002" />
-                                            </svg>
-                                            assign
-                                            role</span>
-                                        <span
-                                            class="p-2 rounded-md capitalize hover:bg-primary-light cursor-pointer flex flex-row gap-1 items-center"
-                                            (click)="updateUser(user); userTableAction.toggle($event)" tabindex="0"
-                                            (keyup.enter)="updateUser(user); userTableAction.toggle($event)">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
-                                                height="20" color="currentColor" fill="none" stroke="#141B34"
-                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                                <path
-                                                    d="M15.2141 5.98239L16.6158 4.58063C17.39 3.80646 18.6452 3.80646 19.4194 4.58063C20.1935 5.3548 20.1935 6.60998 19.4194 7.38415L18.0176 8.78591M15.2141 5.98239L6.98023 14.2163C5.93493 15.2616 5.41226 15.7842 5.05637 16.4211C4.70047 17.058 4.3424 18.5619 4 20C5.43809 19.6576 6.94199 19.2995 7.57889 18.9436C8.21579 18.5877 8.73844 18.0651 9.78375 17.0198L18.0176 8.78591M15.2141 5.98239L18.0176 8.78591" />
-                                                <path d="M11 20H17" />
-                                            </svg>
-                                            update
-                                            user
-                                        </span>
-                                        <a class="p-2 rounded-md capitalize hover:bg-primary-light cursor-pointer flex flex-row gap-1 items-center"
-                                            [routerLink]="[user.id]">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
-                                                height="20" color="currentColor" fill="none" stroke="#141B34"
-                                                stroke-width="1.5">
-                                                <path
-                                                    d="M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z" />
-                                                <path
-                                                    d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z" />
-                                            </svg>
-                                            view
-                                            dashboard
-                                        </a>
-                                    </div>
-                                </div>
-                            </p-popover>
+              <!-- User table action popover -->
+              <p-popover #userTableAction>
+                <div class="w-35">
+                  <div class="flex flex-col">
+                    <span
+                      class="p-2 rounded-md capitalize hover:bg-primary-light cursor-pointer flex flex-row gap-1 items-center"
+                      (click)="assignRole.toggle($event)"
+                      tabindex="0"
+                      (keyup.enter)="assignRole.toggle($event)"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        color="currentColor"
+                        fill="none"
+                        stroke="#141B34"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M12.001 5.00003V19.002" />
+                        <path d="M19.002 12.002L4.99998 12.002" />
+                      </svg>
+                      assign role</span
+                    >
+                    <span
+                      class="p-2 rounded-md capitalize hover:bg-primary-light cursor-pointer flex flex-row gap-1 items-center"
+                      (click)="updateUser(user); userTableAction.toggle($event)"
+                      tabindex="0"
+                      (keyup.enter)="updateUser(user); userTableAction.toggle($event)"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        color="currentColor"
+                        fill="none"
+                        stroke="#141B34"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M15.2141 5.98239L16.6158 4.58063C17.39 3.80646 18.6452 3.80646 19.4194 4.58063C20.1935 5.3548 20.1935 6.60998 19.4194 7.38415L18.0176 8.78591M15.2141 5.98239L6.98023 14.2163C5.93493 15.2616 5.41226 15.7842 5.05637 16.4211C4.70047 17.058 4.3424 18.5619 4 20C5.43809 19.6576 6.94199 19.2995 7.57889 18.9436C8.21579 18.5877 8.73844 18.0651 9.78375 17.0198L18.0176 8.78591M15.2141 5.98239L18.0176 8.78591"
+                        />
+                        <path d="M11 20H17" />
+                      </svg>
+                      update user
+                    </span>
+                    <a
+                      class="p-2 rounded-md capitalize hover:bg-primary-light cursor-pointer flex flex-row gap-1 items-center"
+                      [routerLink]="[user.id]"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="20"
+                        height="20"
+                        color="currentColor"
+                        fill="none"
+                        stroke="#141B34"
+                        stroke-width="1.5"
+                      >
+                        <path
+                          d="M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z"
+                        />
+                        <path
+                          d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z"
+                        />
+                      </svg>
+                      view dashboard
+                    </a>
+                  </div>
+                </div>
+              </p-popover>
 
-                            <!-- Assign role to user popover -->
-                            <p-popover #assignRole>
-                                <div class="w-[20rem] py-4 px-1!">
-                                    <div class="border-b border-gray-300 pb-4">
-                                        <span class="font-semibold capitalize w-full!">assign / de-assign roles</span>
-                                    </div>
+              <!-- Assign role to user popover -->
+              <p-popover #assignRole>
+                <div class="w-[20rem] py-4 px-1!">
+                  <div class="border-b border-gray-300 pb-4">
+                    <span class="font-semibold capitalize w-full!">assign / de-assign roles</span>
+                  </div>
 
-                                    <div class="flex flex-col gap-1 mt-4">
-                                        <span class="first-letter:capitalize text-black">role types</span>
-                                        <span class="first-letter:capitalize text-gray-300">select one or more roles for
-                                            the user</span>
-                                        <div class="my-4 flex flex-row gap-4 flex-wrap">
-                                            <span class="flex flex-row gap-2 items-center">
-                                                <input type="checkbox" class="accent-primary p-1 size-4" checked>
-                                                <span class="first-letter:capitalize!">super-admin</span>
-                                            </span>
+                  <div class="flex flex-col gap-1 mt-4">
+                    <span class="first-letter:capitalize text-black">role types</span>
+                    <span class="first-letter:capitalize text-gray-300"
+                      >select one or more roles for the user</span
+                    >
+                    <div class="my-4 flex flex-row gap-4 flex-wrap">
+                      <span class="flex flex-row gap-2 items-center">
+                        <input type="checkbox" class="accent-primary p-1 size-4" checked />
+                        <span class="first-letter:capitalize!">super-admin</span>
+                      </span>
 
-                                            <span class="flex flex-row gap-2 items-center">
-                                                <input type="checkbox" class="accent-primary p-1 size-4">
-                                                <span class="first-letter:capitalize!">admin</span>
-                                            </span>
+                      <span class="flex flex-row gap-2 items-center">
+                        <input type="checkbox" class="accent-primary p-1 size-4" />
+                        <span class="first-letter:capitalize!">admin</span>
+                      </span>
 
-                                            <span class="flex flex-row gap-2 items-center">
-                                                <input type="checkbox" class="accent-primary p-1 size-4">
-                                                <span class="first-letter:capitalize!">author</span>
-                                            </span>
+                      <span class="flex flex-row gap-2 items-center">
+                        <input type="checkbox" class="accent-primary p-1 size-4" />
+                        <span class="first-letter:capitalize!">author</span>
+                      </span>
 
-                                            <span class="flex flex-row gap-2 items-center">
-                                                <input type="checkbox" class="accent-primary p-1 size-4">
-                                                <span class="first-letter:capitalize!">moderator 2</span>
-                                            </span>
+                      <span class="flex flex-row gap-2 items-center">
+                        <input type="checkbox" class="accent-primary p-1 size-4" />
+                        <span class="first-letter:capitalize!">moderator 2</span>
+                      </span>
 
-                                            <span class="flex flex-row gap-2 items-center">
-                                                <input type="checkbox" class="accent-primary p-1 size-4">
-                                                <span class="first-letter:capitalize!">moderator</span>
-                                            </span>
+                      <span class="flex flex-row gap-2 items-center">
+                        <input type="checkbox" class="accent-primary p-1 size-4" />
+                        <span class="first-letter:capitalize!">moderator</span>
+                      </span>
 
-                                            <span class="flex flex-row gap-2 items-center">
-                                                <input type="checkbox" class="accent-primary p-1 size-4">
-                                                <span class="first-letter:capitalize!">sib author</span>
-                                            </span>
+                      <span class="flex flex-row gap-2 items-center">
+                        <input type="checkbox" class="accent-primary p-1 size-4" />
+                        <span class="first-letter:capitalize!">sib author</span>
+                      </span>
+                    </div>
+                  </div>
 
-                                        </div>
-                                    </div>
-
-                                    <div class="flex flex-row justify-between items-center gap-4 mt-4">
-                                        <button class="btn flex-1! border! border-gray-300! bg-transparent! text-black!"
-                                            type="button" (click)="assignRole.toggle($event)">cancel</button>
-                                        <button type="button" class="btn flex-1!" (click)="saveChanges(user)">save
-                                            changes</button>
-                                    </div>
-                                </div>
-                            </p-popover>
-
-                        </td>
-                    </tr>
-                </ng-template>
-            </p-table>
-        </div>
+                  <div class="flex flex-row justify-between items-center gap-4 mt-4">
+                    <button
+                      class="btn flex-1! border! border-gray-300! bg-transparent! text-black!"
+                      type="button"
+                      (click)="assignRole.toggle($event)"
+                    >
+                      cancel
+                    </button>
+                    <button type="button" class="btn flex-1!" (click)="saveChanges(user)">
+                      save changes
+                    </button>
+                  </div>
+                </div>
+              </p-popover>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
     </div>
+  </div>
 </div>
 
 <!-- Create new User -->
-<p-dialog header="Create a User" [draggable]="false" [closable]="true" [resizable]="false" [modal]="true"
-    [(visible)]="showCreateNewUserModal" [style]="{ width: '35rem' }">
-    <span class="block mb-8 first-letter:capitalize">please fill in the fields below to create a user</span>
-    <div>
-
-        <form class="form" (submit)="onCreateNewUser($event)" novalidate>
-            <div class="form-container grid! grid-cols-1! md:grid-cols-2! gap-4">
-
-                <div class="form-group">
-                    <label for="title-input">title</label>
-                    <input id="title-input" type="text" [field]="createNewUserForm.title"
-                        [ngClass]="{'border border-red-400!': createNewUserForm.title().invalid() && createNewUserForm.title().touched()}"
-                        placeholder="enter title" class="form-control">
-                    @if(createNewUserForm.title().invalid() && createNewUserForm.title().touched()) {
-                    <div class="control-error">
-                        @for(error of createNewUserForm.title().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
-
-                <div class="form-group">
-                    <label for="first-name-input">first name</label>
-                    <input id="first-name-input" type="text" [field]="createNewUserForm.firstName"
-                        [ngClass]="{'border border-red-400!': createNewUserForm.firstName().invalid() && createNewUserForm.firstName().touched()}"
-                        placeholder="enter first name" class="form-control">
-                    @if(createNewUserForm.firstName().invalid() && createNewUserForm.firstName().touched()) {
-                    <div class="control-error">
-                        @for(error of createNewUserForm.firstName().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
-
-                <div class="form-group">
-                    <label for="last-name-input">last name</label>
-                    <input id="last-name-input" type="text" [field]="createNewUserForm.lastName"
-                        [field]="createNewUserForm.lastName"
-                        [ngClass]="{'border border-red-400!': createNewUserForm.lastName().invalid() && createNewUserForm.lastName().touched()}"
-                        placeholder="enter last name" class="form-control">
-                    @if(createNewUserForm.lastName().invalid() && createNewUserForm.lastName().touched()) {
-                    <div class="control-error">
-                        @for(error of createNewUserForm.lastName().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
-
-                <div class="form-group">
-                    <label for="email-input">email</label>
-                    <input id="email-input" type="text" [field]="createNewUserForm.email"
-                        [ngClass]="{'border border-red-400!': createNewUserForm.email().invalid() && createNewUserForm.email().touched()}"
-                        placeholder="enter email" class="form-control">
-                    @if(createNewUserForm.email().invalid() && createNewUserForm.email().touched()) {
-                    <div class="control-error">
-                        @for(error of createNewUserForm.email().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
-
-                <div class="form-group">
-                    <label for="role-input">role</label>
-                    <select id="role-input" class="form-control" [field]="createNewUserForm.role"
-                        [ngClass]="{'border border-red-400!': createNewUserForm.role().invalid() && createNewUserForm.role().touched()}">
-                        <option value="">--Select role--</option>
-                        <option value="author" class="">Author</option>
-                        <option value="moderator">Moderator</option>
-                        <option value="finalizater">Finalizer</option>
-                        <option value="admin">Admin</option>
-                    </select>
-                    @if(createNewUserForm.role().invalid() && createNewUserForm.role().touched()) {
-                    <div class="control-error">
-                        @for(error of createNewUserForm.role().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
+<p-dialog
+  header="Create a User"
+  [draggable]="false"
+  [closable]="true"
+  [resizable]="false"
+  [modal]="true"
+  [(visible)]="showCreateNewUserModal"
+  [style]="{ width: '35rem' }"
+>
+  <span class="block mb-8 first-letter:capitalize"
+    >please fill in the fields below to create a user</span
+  >
+  <div>
+    <form class="form" (submit)="onCreateNewUser($event)" novalidate>
+      <div class="form-container grid! grid-cols-1! md:grid-cols-2! gap-4">
+        <div class="form-group">
+          <label for="title-input">title</label>
+          <input
+            id="title-input"
+            type="text"
+            [field]="createNewUserForm.title"
+            [ngClass]="{
+              'border border-red-400!':
+                createNewUserForm.title().invalid() && createNewUserForm.title().touched(),
+            }"
+            placeholder="enter title"
+            class="form-control"
+          />
+          @if (createNewUserForm.title().invalid() && createNewUserForm.title().touched()) {
+            <div class="control-error">
+              @for (error of createNewUserForm.title().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
             </div>
+          }
+        </div>
 
-            <div class="flex flex-row justify-between gap-6 mt-6">
-                <button class="btn flex-1 text-black! border border-gray-300! bg-transparent!" type="button"
-                    (click)="showCreateNewUserModal.set(!showCreateNewUserModal())">cancel</button>
-                <button class="btn flex-1" type="submit">create user</button>
+        <div class="form-group">
+          <label for="first-name-input">first name</label>
+          <input
+            id="first-name-input"
+            type="text"
+            [field]="createNewUserForm.firstName"
+            [ngClass]="{
+              'border border-red-400!':
+                createNewUserForm.firstName().invalid() && createNewUserForm.firstName().touched(),
+            }"
+            placeholder="enter first name"
+            class="form-control"
+          />
+          @if (createNewUserForm.firstName().invalid() && createNewUserForm.firstName().touched()) {
+            <div class="control-error">
+              @for (error of createNewUserForm.firstName().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
             </div>
+          }
+        </div>
 
-        </form>
-    </div>
+        <div class="form-group">
+          <label for="last-name-input">last name</label>
+          <input
+            id="last-name-input"
+            type="text"
+            [field]="createNewUserForm.lastName"
+            [field]="createNewUserForm.lastName"
+            [ngClass]="{
+              'border border-red-400!':
+                createNewUserForm.lastName().invalid() && createNewUserForm.lastName().touched(),
+            }"
+            placeholder="enter last name"
+            class="form-control"
+          />
+          @if (createNewUserForm.lastName().invalid() && createNewUserForm.lastName().touched()) {
+            <div class="control-error">
+              @for (error of createNewUserForm.lastName().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="email-input">email</label>
+          <input
+            id="email-input"
+            type="text"
+            [field]="createNewUserForm.email"
+            [ngClass]="{
+              'border border-red-400!':
+                createNewUserForm.email().invalid() && createNewUserForm.email().touched(),
+            }"
+            placeholder="enter email"
+            class="form-control"
+          />
+          @if (createNewUserForm.email().invalid() && createNewUserForm.email().touched()) {
+            <div class="control-error">
+              @for (error of createNewUserForm.email().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="role-input">role</label>
+          <select
+            id="role-input"
+            class="form-control"
+            [field]="createNewUserForm.role"
+            [ngClass]="{
+              'border border-red-400!':
+                createNewUserForm.role().invalid() && createNewUserForm.role().touched(),
+            }"
+          >
+            <option value="">--Select role--</option>
+            <option value="author" class="">Author</option>
+            <option value="moderator">Moderator</option>
+            <option value="finalizater">Finalizer</option>
+            <option value="admin">Admin</option>
+          </select>
+          @if (createNewUserForm.role().invalid() && createNewUserForm.role().touched()) {
+            <div class="control-error">
+              @for (error of createNewUserForm.role().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="flex flex-row justify-between gap-6 mt-6">
+        <button
+          class="btn flex-1 text-black! border border-gray-300! bg-transparent!"
+          type="button"
+          (click)="showCreateNewUserModal.set(!showCreateNewUserModal())"
+        >
+          cancel
+        </button>
+        <button class="btn flex-1" type="submit">create user</button>
+      </div>
+    </form>
+  </div>
 </p-dialog>
 
 <!-- Update new User -->
-<p-dialog header="Update User" [draggable]="false" [closable]="false" [modal]="true" [(visible)]="showUpdateUserModal"
-    [style]="{ width: '35rem' }">
-    <span class="block mb-8 first-letter:capitalize">please fill in the fields below to update user</span>
-    <div>
-
-        <form class="form" (submit)="onUpdateUser($event)" novalidate>
-            <div class="form-container grid! grid-cols-1! md:grid-cols-2! gap-4">
-
-                <div class="form-group">
-                    <label for="title-input">title</label>
-                    <input id="title-input" type="text" [field]="updateUserForm.title"
-                        [ngClass]="{'border border-red-400!': updateUserForm.title().invalid() && updateUserForm.title().touched()}"
-                        placeholder="enter title" class="form-control">
-                    @if(updateUserForm.title().invalid() && updateUserForm.title().touched()) {
-                    <div class="control-error">
-                        @for(error of updateUserForm.title().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
-
-                <div class="form-group">
-                    <label for="first-name-input">first name</label>
-                    <input id="first-name-input" type="text" [field]="updateUserForm.firstName"
-                        [ngClass]="{'border border-red-400!': updateUserForm.firstName().invalid() && updateUserForm.firstName().touched()}"
-                        placeholder="enter first name" class="form-control">
-                    @if(updateUserForm.firstName().invalid() && updateUserForm.firstName().touched()) {
-                    <div class="control-error">
-                        @for(error of updateUserForm.firstName().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
-
-                <div class="form-group">
-                    <label for="last-name-input">last name</label>
-                    <input id="last-name-input" type="text" [field]="updateUserForm.lastName"
-                        [field]="updateUserForm.lastName"
-                        [ngClass]="{'border border-red-400!': updateUserForm.lastName().invalid() && updateUserForm.lastName().touched()}"
-                        placeholder="enter last name" class="form-control">
-                    @if(updateUserForm.lastName().invalid() && updateUserForm.lastName().touched()) {
-                    <div class="control-error">
-                        @for(error of updateUserForm.lastName().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
-
-                <div class="form-group">
-                    <label for="institution-input">institution</label>
-                    <input id="institution-input" type="text" [field]="updateUserForm.institution"
-                        [field]="updateUserForm.institution"
-                        [ngClass]="{'border border-red-400!': updateUserForm.institution().invalid() && updateUserForm.institution().touched()}"
-                        placeholder="enter last name" class="form-control">
-                    @if(updateUserForm.institution().invalid() && updateUserForm.institution().touched()) {
-                    <div class="control-error">
-                        @for(error of updateUserForm.institution().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
-
-                <div class="form-group">
-                    <label for="department-input">department</label>
-                    <input id="department-input" type="text" [field]="updateUserForm.department"
-                        [field]="updateUserForm.department"
-                        [ngClass]="{'border border-red-400!': updateUserForm.department().invalid() && updateUserForm.department().touched()}"
-                        placeholder="enter last name" class="form-control">
-                    @if(updateUserForm.department().invalid() && updateUserForm.department().touched()) {
-                    <div class="control-error">
-                        @for(error of updateUserForm.department().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
-
-                <div class="form-group">
-                    <label for="phone-number-input">phone number</label>
-                    <input id="phone-number-input" type="text" [field]="updateUserForm.phoneNumber"
-                        [field]="updateUserForm.phoneNumber"
-                        [ngClass]="{'border border-red-400!': updateUserForm.phoneNumber().invalid() && updateUserForm.phoneNumber().touched()}"
-                        placeholder="enter last name" class="form-control">
-                    @if(updateUserForm.phoneNumber().invalid() && updateUserForm.phoneNumber().touched()) {
-                    <div class="control-error">
-                        @for(error of updateUserForm.phoneNumber().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
-
-                <div class="form-group">
-                    <label for="alternative-phone-number-input">alternative phone number</label>
-                    <input id="alternative-phone-number-input" type="text"
-                        [field]="updateUserForm.alternativePhoneNumber" [field]="updateUserForm.alternativePhoneNumber"
-                        [ngClass]="{'border border-red-400!': updateUserForm.alternativePhoneNumber().invalid() && updateUserForm.alternativePhoneNumber().touched()}"
-                        placeholder="enter last name" class="form-control">
-                    @if(updateUserForm.alternativePhoneNumber().invalid() &&
-                    updateUserForm.alternativePhoneNumber().touched()) {
-                    <div class="control-error">
-                        @for(error of updateUserForm.alternativePhoneNumber().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
-
-                <div class="form-group">
-                    <label for="gender-input">gender</label>
-                    <select id="gender-input" class="form-control" [field]="updateUserForm.gender"
-                        [ngClass]="{'border border-red-400!': updateUserForm.gender().invalid() && updateUserForm.gender().touched()}">
-                        <option value="">--Select gender--</option>
-                        <option value="MALE" class="">Male</option>
-                        <option value="FEMALE">Female</option>
-                    </select>
-                    @if(updateUserForm.gender().invalid() && updateUserForm.gender().touched()) {
-                    <div class="control-error">
-                        @for(error of updateUserForm.gender().errors(); track error.kind) {
-                        <span>{{error.message}}</span>
-                        }
-                    </div>
-                    }
-                </div>
+<p-dialog
+  header="Update User"
+  [draggable]="false"
+  [closable]="false"
+  [modal]="true"
+  [(visible)]="showUpdateUserModal"
+  [style]="{ width: '35rem' }"
+>
+  <span class="block mb-8 first-letter:capitalize"
+    >please fill in the fields below to update user</span
+  >
+  <div>
+    <form class="form" (submit)="onUpdateUser($event)" novalidate>
+      <div class="form-container grid! grid-cols-1! md:grid-cols-2! gap-4">
+        <div class="form-group">
+          <label for="title-input">title</label>
+          <input
+            id="title-input"
+            type="text"
+            [field]="updateUserForm.title"
+            [ngClass]="{
+              'border border-red-400!':
+                updateUserForm.title().invalid() && updateUserForm.title().touched(),
+            }"
+            placeholder="enter title"
+            class="form-control"
+          />
+          @if (updateUserForm.title().invalid() && updateUserForm.title().touched()) {
+            <div class="control-error">
+              @for (error of updateUserForm.title().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
             </div>
+          }
+        </div>
 
-            <div class="flex flex-row justify-between gap-6 mt-6">
-                <button class="btn flex-1 text-black! border border-gray-300! bg-transparent!" type="button"
-                    (click)="showUpdateUserModal.set(!showUpdateUserModal())">cancel</button>
-                <button class="btn flex-1" type="submit">update user</button>
+        <div class="form-group">
+          <label for="first-name-input">first name</label>
+          <input
+            id="first-name-input"
+            type="text"
+            [field]="updateUserForm.firstName"
+            [ngClass]="{
+              'border border-red-400!':
+                updateUserForm.firstName().invalid() && updateUserForm.firstName().touched(),
+            }"
+            placeholder="enter first name"
+            class="form-control"
+          />
+          @if (updateUserForm.firstName().invalid() && updateUserForm.firstName().touched()) {
+            <div class="control-error">
+              @for (error of updateUserForm.firstName().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
             </div>
-        </form>
-    </div>
+          }
+        </div>
 
+        <div class="form-group">
+          <label for="last-name-input">last name</label>
+          <input
+            id="last-name-input"
+            type="text"
+            [field]="updateUserForm.lastName"
+            [field]="updateUserForm.lastName"
+            [ngClass]="{
+              'border border-red-400!':
+                updateUserForm.lastName().invalid() && updateUserForm.lastName().touched(),
+            }"
+            placeholder="enter last name"
+            class="form-control"
+          />
+          @if (updateUserForm.lastName().invalid() && updateUserForm.lastName().touched()) {
+            <div class="control-error">
+              @for (error of updateUserForm.lastName().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="institution-input">institution</label>
+          <input
+            id="institution-input"
+            type="text"
+            [field]="updateUserForm.institution"
+            [field]="updateUserForm.institution"
+            [ngClass]="{
+              'border border-red-400!':
+                updateUserForm.institution().invalid() && updateUserForm.institution().touched(),
+            }"
+            placeholder="enter last name"
+            class="form-control"
+          />
+          @if (updateUserForm.institution().invalid() && updateUserForm.institution().touched()) {
+            <div class="control-error">
+              @for (error of updateUserForm.institution().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="department-input">department</label>
+          <input
+            id="department-input"
+            type="text"
+            [field]="updateUserForm.department"
+            [field]="updateUserForm.department"
+            [ngClass]="{
+              'border border-red-400!':
+                updateUserForm.department().invalid() && updateUserForm.department().touched(),
+            }"
+            placeholder="enter last name"
+            class="form-control"
+          />
+          @if (updateUserForm.department().invalid() && updateUserForm.department().touched()) {
+            <div class="control-error">
+              @for (error of updateUserForm.department().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="phone-number-input">phone number</label>
+          <input
+            id="phone-number-input"
+            type="text"
+            [field]="updateUserForm.phoneNumber"
+            [field]="updateUserForm.phoneNumber"
+            [ngClass]="{
+              'border border-red-400!':
+                updateUserForm.phoneNumber().invalid() && updateUserForm.phoneNumber().touched(),
+            }"
+            placeholder="enter last name"
+            class="form-control"
+          />
+          @if (updateUserForm.phoneNumber().invalid() && updateUserForm.phoneNumber().touched()) {
+            <div class="control-error">
+              @for (error of updateUserForm.phoneNumber().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="alternative-phone-number-input">alternative phone number</label>
+          <input
+            id="alternative-phone-number-input"
+            type="text"
+            [field]="updateUserForm.alternativePhoneNumber"
+            [field]="updateUserForm.alternativePhoneNumber"
+            [ngClass]="{
+              'border border-red-400!':
+                updateUserForm.alternativePhoneNumber().invalid() &&
+                updateUserForm.alternativePhoneNumber().touched(),
+            }"
+            placeholder="enter last name"
+            class="form-control"
+          />
+          @if (
+            updateUserForm.alternativePhoneNumber().invalid() &&
+            updateUserForm.alternativePhoneNumber().touched()
+          ) {
+            <div class="control-error">
+              @for (error of updateUserForm.alternativePhoneNumber().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="gender-input">gender</label>
+          <select
+            id="gender-input"
+            class="form-control"
+            [field]="updateUserForm.gender"
+            [ngClass]="{
+              'border border-red-400!':
+                updateUserForm.gender().invalid() && updateUserForm.gender().touched(),
+            }"
+          >
+            <option value="">--Select gender--</option>
+            <option value="MALE" class="">Male</option>
+            <option value="FEMALE">Female</option>
+          </select>
+          @if (updateUserForm.gender().invalid() && updateUserForm.gender().touched()) {
+            <div class="control-error">
+              @for (error of updateUserForm.gender().errors(); track error.kind) {
+                <span>{{ error.message }}</span>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="flex flex-row justify-between gap-6 mt-6">
+        <button
+          class="btn flex-1 text-black! border border-gray-300! bg-transparent!"
+          type="button"
+          (click)="showUpdateUserModal.set(!showUpdateUserModal())"
+        >
+          cancel
+        </button>
+        <button class="btn flex-1" type="submit">update user</button>
+      </div>
+    </form>
+  </div>
 </p-dialog>
 
 <!-- Filter user by role popover -->
 <p-popover #filterByRole>
-    <div class="w-[20rem] py-4 px-1!">
-        <div class="border-b border-gray-300 pb-4">
-            <span class="font-semibold first-letter:uppercase! w-full!">Filter by</span>
-        </div>
-
-        <div class="flex flex-col gap-1 mt-4">
-            <span class="first-letter:capitalize text-black">roles</span>
-            <span class="first-letter:capitalize text-gray-300">select one or more roles for the user</span>
-            <div class="my-4 flex flex-row gap-4 flex-wrap">
-                <span class="flex flex-row gap-2 items-center">
-                    <input type="checkbox" class="accent-primary p-1 size-4" checked>
-                    <span class="capitalize!">all roles</span>
-                </span>
-
-                <span class="flex flex-row gap-2 items-center">
-                    <input type="checkbox" class="accent-primary p-1 size-4">
-                    <span class="capitalize!">admin</span>
-                </span>
-
-                <span class="flex flex-row gap-2 items-center">
-                    <input type="checkbox" class="accent-primary p-1 size-4">
-                    <span class="capitalize!">author</span>
-                </span>
-
-                <span class="flex flex-row gap-2 items-center">
-                    <input type="checkbox" class="accent-primary p-1 size-4">
-                    <span class="capitalize!">moderator</span>
-                </span>
-            </div>
-        </div>
-
-        <div class="flex flex-row justify-between items-center gap-4 mt-4">
-            <button class="btn flex-1! border! border-gray-300! bg-transparent! text-black!" type="button"
-                (click)="filterByRole.toggle($event)">cancel</button>
-            <button type="button" class="btn flex-1!">filter</button>
-        </div>
+  <div class="w-[20rem] py-4 px-1!">
+    <div class="border-b border-gray-300 pb-4">
+      <span class="font-semibold first-letter:uppercase! w-full!">Filter by</span>
     </div>
+
+    <div class="flex flex-col gap-1 mt-4">
+      <span class="first-letter:capitalize text-black">roles</span>
+      <span class="first-letter:capitalize text-gray-300"
+        >select one or more roles for the user</span
+      >
+      <div class="my-4 flex flex-row gap-4 flex-wrap">
+        <span class="flex flex-row gap-2 items-center">
+          <input type="checkbox" class="accent-primary p-1 size-4" checked />
+          <span class="capitalize!">all roles</span>
+        </span>
+
+        <span class="flex flex-row gap-2 items-center">
+          <input type="checkbox" class="accent-primary p-1 size-4" />
+          <span class="capitalize!">admin</span>
+        </span>
+
+        <span class="flex flex-row gap-2 items-center">
+          <input type="checkbox" class="accent-primary p-1 size-4" />
+          <span class="capitalize!">author</span>
+        </span>
+
+        <span class="flex flex-row gap-2 items-center">
+          <input type="checkbox" class="accent-primary p-1 size-4" />
+          <span class="capitalize!">moderator</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="flex flex-row justify-between items-center gap-4 mt-4">
+      <button
+        class="btn flex-1! border! border-gray-300! bg-transparent! text-black!"
+        type="button"
+        (click)="filterByRole.toggle($event)"
+      >
+        cancel
+      </button>
+      <button type="button" class="btn flex-1!">filter</button>
+    </div>
+  </div>
 </p-popover>
