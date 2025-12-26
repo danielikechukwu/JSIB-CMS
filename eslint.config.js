@@ -17,12 +17,13 @@ module.exports = defineConfig([
       tseslint.configs.recommended,
       tseslint.configs.stylistic,
       angular.configs.tsRecommended,
-      'plugin:@angular-eslint/recommended',
-      'plugin:@angular-eslint/template/process-inline-templates',
-      eslintConfigPrettier,
     ],
     processor: angular.processInlineTemplates,
     rules: {
+      // Disable conflicting formatting rules
+      ...eslintConfigPrettier.rules,
+
+      // Prettier formatting
       'prettier/prettier': 'error',
       '@angular-eslint/directive-selector': [
         'error',
@@ -62,13 +63,15 @@ module.exports = defineConfig([
   },
   {
     files: ['**/*.html'],
-    extends: [
-      angular.configs.templateRecommended,
-      angular.configs.templateAccessibility,
-      'plugin:@angular-eslint/template/recommended',
-      eslintConfigPrettier,
-    ],
+    plugins: {
+      prettier: eslintPluginPrettier,
+    },
+    extends: [angular.configs.templateRecommended, angular.configs.templateAccessibility],
     rules: {
+      // Disable conflicting formatting rules
+      ...eslintConfigPrettier.rules,
+
+      // Prettier formatting
       'prettier/prettier': 'error',
       '@angular-eslint/template/alt-text': 'error', // Enforce that all elements that require alternative text have meaningful information to relay back to assistive technologies.
       '@angular-eslint/template/button-has-type': 'error', // Enforce that button elements have an explicit type attribute. e.g type="button", type="submit", or type="reset".
