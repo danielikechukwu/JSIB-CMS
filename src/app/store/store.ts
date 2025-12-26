@@ -15,7 +15,7 @@ export class Store {
     return this._store();
   }
 
-  updateStore(state: { [key: string]: any }) {
+  updateStore(state: Record<string, unknown>): void {
     this._store.update((store) => ({
       ...store,
       ...state,

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
 import { TableModule } from 'primeng/table';
 import { Dialog } from 'primeng/dialog';
@@ -78,12 +79,12 @@ export default class User {
     console.log('Disable User');
   }
 
-  updateUser(user: any): void {
+  updateUser(user: unknown): void {
     this.showUpdateUserModal.set(!this.showUpdateUserModal());
     console.log('User: ', user);
   }
 
-  saveChanges(user: any): void {
+  saveChanges(user: unknown): void {
     console.log('User: ', user);
   }
 
@@ -112,8 +113,8 @@ export default class User {
 
   initCreateNewUserFormValidation(): (fieldPath: SchemaPathTree<CreateNewUser>) => void {
     return (fieldPath: SchemaPathTree<CreateNewUser>) => {
-      required(fieldPath.email, { message: 'email is required' }),
-        email(fieldPath.email, { message: 'enter a validate email address' }),
+      email(fieldPath.email, { message: 'enter a validate email address' }),
+        required(fieldPath.email, { message: 'email is required' }),
         required(fieldPath.firstName, { message: 'first name is required' }),
         required(fieldPath.lastName, { message: 'last name is required' }),
         required(fieldPath.role, { message: 'role is required' }),

@@ -1,13 +1,14 @@
 <div class="h-full px-4">
 
     <div class="flex flex-row items-center justify-center my-6">
-        <img src="/images/logo.svg" alt="logo" width="75px" height="64px">
+        <img ngSrc="/images/logo.svg" alt="logo" width="75" height="64">
         <span class="uppercase font-black text-md">admin cms</span>
     </div>
 
     <div class="flex flex-col gap-1 overflow-y-auto max-h-90 mb-5">
 
-        <div class="nav group" routerLink="dashboard" routerLinkActive="nav-active" (click)="resolveSideNav()">
+        <a class="nav group" routerLink="dashboard" routerLinkActive="nav-active" (click)="resolveSideNav()"
+            (keyup.enter)="resolveSideNav()" tabindex="0">
             <a class="flex flex-row items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="group-hover:stroke-white h-5 w-5"
                     width="20" height="20" color="currentColor" fill="none" stroke="#141B34" stroke-width="1.5"
@@ -24,9 +25,10 @@
 
                 <span class="capitalize group-hover:text-white">dashboard overview</span>
             </a>
-        </div>
+        </a>
 
-        <div class="nav group" routerLink="users" routerLinkActive="nav-active" (click)="resolveSideNav()">
+        <a class="nav group" routerLink="users" role="link" routerLinkActive="nav-active" (click)="resolveSideNav()"
+            tabindex="0" (keyup.enter)="resolveSideNav()">
             <a class="flex flex-row gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="group-hover:stroke-white h-5 w-5"
                     width="20" height="20" color="currentColor" fill="none" stroke="#141B34" stroke-width="1.5"
@@ -46,9 +48,10 @@
                         moderators</span>
                 </div>
             </a>
-        </div>
+        </a>
 
-        <div class="nav group" routerLink="subjects" routerLinkActive="nav-active" (click)="resolveSideNav()">
+        <a class="nav group" routerLink="subjects" routerLinkActive="nav-active" (click)="resolveSideNav()" tabindex="0"
+            (keyup.enter)="resolveSideNav()">
             <a class="flex flex-row items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" class="group-hover:stroke-white h-5 w-5" viewBox="0 0 24 24"
                     width="20" height="20" color="currentColor" fill="none" stroke="#141B34" stroke-width="1.5"
@@ -59,9 +62,10 @@
                 </svg>
                 <span class="capitalize group-hover:text-white">subject</span>
             </a>
-        </div>
+        </a>
 
-        <div class="nav group" routerLink="tasks" routerLinkActive="nav-active" (click)="resolveSideNav()">
+        <a class="nav group" routerLink="tasks" routerLinkActive="nav-active" (click)="resolveSideNav()" tabindex="0"
+            (keyup.enter)="resolveSideNav()">
             <a class="flex flex-row items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
                     class="group-hover:stroke-white h-5 w-5" color="currentColor" fill="none" stroke="#141B34"
@@ -75,9 +79,10 @@
                 </svg>
                 <span class="capitalize group-hover:text-white">tasks</span>
             </a>
-        </div>
+        </a>
 
-        <div class="nav group" routerLink="settings" routerLinkActive="nav-active" (click)="resolveSideNav()">
+        <a class="nav group" routerLink="settings" routerLinkActive="nav-active" (click)="resolveSideNav()" tabindex="0"
+            (keyup.enter)="resolveSideNav()">
             <a class="flex flex-row items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"
                     class="group-hover:stroke-white h-5 w-5" color="currentColor" fill="none" stroke="currentColor"
@@ -89,9 +94,10 @@
                 </svg>
                 <span class="capitalize group-hover:text-white">settings</span>
             </a>
-        </div>
+        </a>
 
-        <div class="nav group" routerLink="logs" routerLinkActive="nav-active" (click)="resolveSideNav()">
+        <a class="nav group" routerLink="logs" routerLinkActive="nav-active" (click)="resolveSideNav()" tabindex="0"
+            (keyup.enter)="resolveSideNav()">
             <a class="flex flex-row items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="group-hover:stroke-white h-5 w-5"
                     width="20" height="20" color="currentColor" fill="none" stroke="#141B34" stroke-width="1.5">
@@ -104,16 +110,17 @@
                 </svg>
                 <span class="capitalize group-hover:text-white">activity logs</span>
             </a>
-        </div>
+        </a>
 
     </div>
 
     <div>
 
-        <div class="border-y border-gray-300 mb-6" (click)="resolveSideNav()">
+        <div class="border-y border-gray-300 mb-6">
 
             <div class="p-3 my-4 cursor-pointer bg-primary rounded-sm group hover:bg-green-700 text-white text-sm"
-                routerLink="analytics-report">
+                routerLink="analytics-report" (click)="resolveSideNav(); analyticsReport()" tabindex="0"
+                (keyup.enter)="resolveSideNav(); analyticsReport()">
                 <a class="flex flex-row items-center gap-2">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.125 13.125L20.25 9M10.875 10.125L13.875 13.125M3.75 15L8.625 10.125" stroke="white"
@@ -140,7 +147,7 @@
         </div>
 
         <div class="p-3 my-4 cursor-pointer rounded-sm group hover:bg-primary text-black hover:text-white text-sm"
-            (click)="logout()">
+            (click)="logout()" tabindex="0" (keyup.enter)="logout()">
             <a class="flex flex-row items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="group-hover:stroke-white" width="20"
                     height="20" color="currentColor" fill="none" stroke="currentColor" stroke-width="2"

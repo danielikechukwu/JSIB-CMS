@@ -1,25 +1,27 @@
-import { Component, DestroyRef, inject, linkedSignal, OnInit } from '@angular/core';
 import {
-  ActivatedRoute,
-  RouteConfigLoadEnd,
-  RouteConfigLoadStart,
-  RouterLink,
-  RouterOutlet,
-  TitleStrategy,
-} from '@angular/router';
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  inject,
+  linkedSignal,
+  OnInit,
+} from '@angular/core';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { Sidebar } from '../sidebar/sidebar';
 import { Topbar } from '../topbar/topbar';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Store } from '../../store/store';
 import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
-import { Event, Router, NavigationStart, NavigationEnd } from '@angular/router';
-import { filter, map } from 'rxjs';
+import { Event, Router, NavigationEnd } from '@angular/router';
+import { map } from 'rxjs';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-layout',
-  imports: [RouterOutlet, Sidebar, Sidebar, Topbar],
+  imports: [RouterOutlet, Sidebar, Topbar, NgOptimizedImage],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class Layout implements OnInit {
   // Dependency injections

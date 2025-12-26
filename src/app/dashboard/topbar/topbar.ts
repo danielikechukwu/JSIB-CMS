@@ -1,4 +1,4 @@
-import { Component, inject, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, model } from '@angular/core';
 import { Store } from '../../store/store';
 
 @Component({
@@ -6,6 +6,7 @@ import { Store } from '../../store/store';
   imports: [],
   templateUrl: './topbar.html',
   styleUrl: './topbar.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Topbar {
   protected _store = inject(Store);

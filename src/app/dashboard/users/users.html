@@ -5,7 +5,8 @@
 
         <div class="flex flex-col gap-6">
             <div class="flex justify-end">
-                <button class="btn" (click)="showCreateNewUserModal.set(!showCreateNewUserModal())">create a
+                <button type="button" class="btn" (click)="showCreateNewUserModal.set(!showCreateNewUserModal())">create
+                    a
                     user</button>
             </div>
             <div>
@@ -95,7 +96,7 @@
     <!-- Table  -->
     <div class="mt-14 border border-gray-300 rounded-2xl pb-4">
         <div class="mt-10 flex flex-row gap-4 px-4 items-center">
-            <div (click)="filterByRole.toggle($event)"
+            <div (click)="filterByRole.toggle($event)" tabindex="0" (keyup.enter)="filterByRole.toggle($event)"
                 class="flex flex-row gap-2 items-center justify-center rounded-md border border-gray-300 px-3 basis-2/6! md:basis-1/6! cursor-pointer h-8">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" color="currentColor"
                     fill="none" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -108,7 +109,8 @@
                 </span>
             </div>
             <div class="relative basis-4/6! md:basis-4/6!">
-                <input type="text" placeholder="search users" class="form-control w-full rounded-md! py-2.5! pl-10!">
+                <input type="text" aria-label="search-users" placeholder="search users"
+                    class="form-control w-full rounded-md! py-2.5! pl-10!">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 absolute left-5 top-2.5 stroke-gray-400"
                     viewBox="0 0 24 24" width="20" height="20" color="currentColor" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -157,17 +159,18 @@
                         <td>{{user.email}}</td>
                         <td>{{user.status}}</td>
                         <td>
-                            @if(user.status.toLocaleLowerCase() === status.Inactive.toLocaleLowerCase()) {
+                            @if(user.status === status.Inactive) {
                             <span class="border border-gray-300 p-1.5 px-3 rounded-md cursor-pointer"
-                                (click)="enableUser()">enable</span>
+                                (click)="enableUser()" tabindex="0" (keyup.enter)="enableUser()">enable</span>
                             }
-                            @if(user.status.toLocaleLowerCase() === status.Active.toLocaleLowerCase()) {
+                            @if(user.status === status.Active) {
                             <span class="border border-red-400 p-1.5 px-3 rounded-md text-red-400 cursor-pointer"
-                                (click)="disableUser()">disable</span>
+                                (click)="disableUser()" tabindex="0" (keyup.enter)="disableUser()">disable</span>
                             }
                         </td>
                         <td>
-                            <span (click)="userTableAction.toggle($event)">
+                            <span (click)="userTableAction.toggle($event)" tabindex="0"
+                                (keyup.enter)="userTableAction.toggle($event)">
                                 <svg width="18" height="3" viewBox="0 0 18 3" class="cursor-pointer w-4 h-4" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -182,7 +185,8 @@
                                     <div class="flex flex-col">
                                         <span
                                             class="p-2 rounded-md capitalize hover:bg-primary-light cursor-pointer flex flex-row gap-1 items-center"
-                                            (click)="assignRole.toggle($event)">
+                                            (click)="assignRole.toggle($event)" tabindex="0"
+                                            (keyup.enter)="assignRole.toggle($event)">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
                                                 height="20" color="currentColor" fill="none" stroke="#141B34"
                                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -193,7 +197,8 @@
                                             role</span>
                                         <span
                                             class="p-2 rounded-md capitalize hover:bg-primary-light cursor-pointer flex flex-row gap-1 items-center"
-                                            (click)="updateUser(user); userTableAction.toggle($event)">
+                                            (click)="updateUser(user); userTableAction.toggle($event)" tabindex="0"
+                                            (keyup.enter)="updateUser(user); userTableAction.toggle($event)">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
                                                 height="20" color="currentColor" fill="none" stroke="#141B34"
                                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -204,8 +209,7 @@
                                             update
                                             user
                                         </span>
-                                        <span
-                                            class="p-2 rounded-md capitalize hover:bg-primary-light cursor-pointer flex flex-row gap-1 items-center"
+                                        <a class="p-2 rounded-md capitalize hover:bg-primary-light cursor-pointer flex flex-row gap-1 items-center"
                                             [routerLink]="[user.id]">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20"
                                                 height="20" color="currentColor" fill="none" stroke="#141B34"
@@ -217,7 +221,7 @@
                                             </svg>
                                             view
                                             dashboard
-                                        </span>
+                                        </a>
                                     </div>
                                 </div>
                             </p-popover>
@@ -270,7 +274,8 @@
                                     <div class="flex flex-row justify-between items-center gap-4 mt-4">
                                         <button class="btn flex-1! border! border-gray-300! bg-transparent! text-black!"
                                             type="button" (click)="assignRole.toggle($event)">cancel</button>
-                                        <button class="btn flex-1!" (click)="saveChanges(user)">save changes</button>
+                                        <button type="button" class="btn flex-1!" (click)="saveChanges(user)">save
+                                            changes</button>
                                     </div>
                                 </div>
                             </p-popover>
@@ -284,7 +289,7 @@
 </div>
 
 <!-- Create new User -->
-<p-dialog header="Create a User" [draggable]="false" [closable]="false" [modal]="true"
+<p-dialog header="Create a User" [draggable]="false" [closable]="true" [resizable]="false" [modal]="true"
     [(visible)]="showCreateNewUserModal" [style]="{ width: '35rem' }">
     <span class="block mb-8 first-letter:capitalize">please fill in the fields below to create a user</span>
     <div>
@@ -293,8 +298,8 @@
             <div class="form-container grid! grid-cols-1! md:grid-cols-2! gap-4">
 
                 <div class="form-group">
-                    <label>title</label>
-                    <input type="text" [field]="createNewUserForm.title"
+                    <label for="title-input">title</label>
+                    <input id="title-input" type="text" [field]="createNewUserForm.title"
                         [ngClass]="{'border border-red-400!': createNewUserForm.title().invalid() && createNewUserForm.title().touched()}"
                         placeholder="enter title" class="form-control">
                     @if(createNewUserForm.title().invalid() && createNewUserForm.title().touched()) {
@@ -307,8 +312,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>first name</label>
-                    <input type="text" [field]="createNewUserForm.firstName"
+                    <label for="first-name-input">first name</label>
+                    <input id="first-name-input" type="text" [field]="createNewUserForm.firstName"
                         [ngClass]="{'border border-red-400!': createNewUserForm.firstName().invalid() && createNewUserForm.firstName().touched()}"
                         placeholder="enter first name" class="form-control">
                     @if(createNewUserForm.firstName().invalid() && createNewUserForm.firstName().touched()) {
@@ -321,8 +326,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label>last name</label>
-                    <input type="text" [field]="createNewUserForm.lastName" [field]="createNewUserForm.lastName"
+                    <label for="last-name-input">last name</label>
+                    <input id="last-name-input" type="text" [field]="createNewUserForm.lastName"
+                        [field]="createNewUserForm.lastName"
                         [ngClass]="{'border border-red-400!': createNewUserForm.lastName().invalid() && createNewUserForm.lastName().touched()}"
                         placeholder="enter last name" class="form-control">
                     @if(createNewUserForm.lastName().invalid() && createNewUserForm.lastName().touched()) {
@@ -335,8 +341,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>email</label>
-                    <input type="text" [field]="createNewUserForm.email"
+                    <label for="email-input">email</label>
+                    <input id="email-input" type="text" [field]="createNewUserForm.email"
                         [ngClass]="{'border border-red-400!': createNewUserForm.email().invalid() && createNewUserForm.email().touched()}"
                         placeholder="enter email" class="form-control">
                     @if(createNewUserForm.email().invalid() && createNewUserForm.email().touched()) {
@@ -349,8 +355,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>role</label>
-                    <select class="form-control" [field]="createNewUserForm.role"
+                    <label for="role-input">role</label>
+                    <select id="role-input" class="form-control" [field]="createNewUserForm.role"
                         [ngClass]="{'border border-red-400!': createNewUserForm.role().invalid() && createNewUserForm.role().touched()}">
                         <option value="">--Select role--</option>
                         <option value="author" class="">Author</option>
@@ -388,8 +394,8 @@
             <div class="form-container grid! grid-cols-1! md:grid-cols-2! gap-4">
 
                 <div class="form-group">
-                    <label>title</label>
-                    <input type="text" [field]="updateUserForm.title"
+                    <label for="title-input">title</label>
+                    <input id="title-input" type="text" [field]="updateUserForm.title"
                         [ngClass]="{'border border-red-400!': updateUserForm.title().invalid() && updateUserForm.title().touched()}"
                         placeholder="enter title" class="form-control">
                     @if(updateUserForm.title().invalid() && updateUserForm.title().touched()) {
@@ -402,8 +408,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>first name</label>
-                    <input type="text" [field]="updateUserForm.firstName"
+                    <label for="first-name-input">first name</label>
+                    <input id="first-name-input" type="text" [field]="updateUserForm.firstName"
                         [ngClass]="{'border border-red-400!': updateUserForm.firstName().invalid() && updateUserForm.firstName().touched()}"
                         placeholder="enter first name" class="form-control">
                     @if(updateUserForm.firstName().invalid() && updateUserForm.firstName().touched()) {
@@ -416,8 +422,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label>last name</label>
-                    <input type="text" [field]="updateUserForm.lastName" [field]="updateUserForm.lastName"
+                    <label for="last-name-input">last name</label>
+                    <input id="last-name-input" type="text" [field]="updateUserForm.lastName"
+                        [field]="updateUserForm.lastName"
                         [ngClass]="{'border border-red-400!': updateUserForm.lastName().invalid() && updateUserForm.lastName().touched()}"
                         placeholder="enter last name" class="form-control">
                     @if(updateUserForm.lastName().invalid() && updateUserForm.lastName().touched()) {
@@ -430,8 +437,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label>institution</label>
-                    <input type="text" [field]="updateUserForm.institution" [field]="updateUserForm.institution"
+                    <label for="institution-input">institution</label>
+                    <input id="institution-input" type="text" [field]="updateUserForm.institution"
+                        [field]="updateUserForm.institution"
                         [ngClass]="{'border border-red-400!': updateUserForm.institution().invalid() && updateUserForm.institution().touched()}"
                         placeholder="enter last name" class="form-control">
                     @if(updateUserForm.institution().invalid() && updateUserForm.institution().touched()) {
@@ -444,8 +452,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label>department</label>
-                    <input type="text" [field]="updateUserForm.department" [field]="updateUserForm.department"
+                    <label for="department-input">department</label>
+                    <input id="department-input" type="text" [field]="updateUserForm.department"
+                        [field]="updateUserForm.department"
                         [ngClass]="{'border border-red-400!': updateUserForm.department().invalid() && updateUserForm.department().touched()}"
                         placeholder="enter last name" class="form-control">
                     @if(updateUserForm.department().invalid() && updateUserForm.department().touched()) {
@@ -458,8 +467,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label>phone number</label>
-                    <input type="text" [field]="updateUserForm.phoneNumber" [field]="updateUserForm.phoneNumber"
+                    <label for="phone-number-input">phone number</label>
+                    <input id="phone-number-input" type="text" [field]="updateUserForm.phoneNumber"
+                        [field]="updateUserForm.phoneNumber"
                         [ngClass]="{'border border-red-400!': updateUserForm.phoneNumber().invalid() && updateUserForm.phoneNumber().touched()}"
                         placeholder="enter last name" class="form-control">
                     @if(updateUserForm.phoneNumber().invalid() && updateUserForm.phoneNumber().touched()) {
@@ -472,9 +482,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label>alternative phone number</label>
-                    <input type="text" [field]="updateUserForm.alternativePhoneNumber"
-                        [field]="updateUserForm.alternativePhoneNumber"
+                    <label for="alternative-phone-number-input">alternative phone number</label>
+                    <input id="alternative-phone-number-input" type="text"
+                        [field]="updateUserForm.alternativePhoneNumber" [field]="updateUserForm.alternativePhoneNumber"
                         [ngClass]="{'border border-red-400!': updateUserForm.alternativePhoneNumber().invalid() && updateUserForm.alternativePhoneNumber().touched()}"
                         placeholder="enter last name" class="form-control">
                     @if(updateUserForm.alternativePhoneNumber().invalid() &&
@@ -488,8 +498,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label>gender</label>
-                    <select class="form-control" [field]="updateUserForm.gender"
+                    <label for="gender-input">gender</label>
+                    <select id="gender-input" class="form-control" [field]="updateUserForm.gender"
                         [ngClass]="{'border border-red-400!': updateUserForm.gender().invalid() && updateUserForm.gender().touched()}">
                         <option value="">--Select gender--</option>
                         <option value="MALE" class="">Male</option>
@@ -551,7 +561,7 @@
         <div class="flex flex-row justify-between items-center gap-4 mt-4">
             <button class="btn flex-1! border! border-gray-300! bg-transparent! text-black!" type="button"
                 (click)="filterByRole.toggle($event)">cancel</button>
-            <button class="btn flex-1!">filter</button>
+            <button type="button" class="btn flex-1!">filter</button>
         </div>
     </div>
 </p-popover>

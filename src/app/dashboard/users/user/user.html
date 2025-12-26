@@ -1,7 +1,7 @@
 <div>
     <div>
         <div class="flex flex-row justify-between items-center mb-8">
-            <button
+            <button type="button"
                 class="btn uppercase! bg-transparent! text-black! border! border-gray-300! flex flex-row gap-1 items-center"
                 (click)="navigateBack()">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" width="20" height="20"
@@ -9,7 +9,7 @@
                     stroke-linejoin="round">
                     <path d="M17 4L8.66943 10.0405C6.44352 11.6545 6.44353 12.3455 8.66943 13.9595L17 20" />
                 </svg>back</button>
-            <button class="btn">manage financials</button>
+            <button class="btn" type="button">manage financials</button>
         </div>
         <div>
             <div class="border border-gray-200 rounded-md py-7 px-4 flex flex-row justify-between bg-primary-light">
@@ -40,11 +40,11 @@
                     <div>
                         <span class="font-semibold first-letter:capitalize">status:</span>
                         @if(true) {
-                        <button
+                        <button type="button"
                             class="btn self-start ml-2 bg-transparent! text-primary! border! border-primary">active</button>
                         }
                         @else {
-                        <button
+                        <button type="button"
                             class="btn self-start ml-2 bg-transparent! text-red-400! border! border-red-400">inactive</button>
                         }
 
@@ -147,8 +147,8 @@
             <div class="form-container grid! grid-cols-1! md:grid-cols-2! gap-4">
 
                 <div class="form-group">
-                    <label>Fee paid per question</label>
-                    <input type="number" [field]="manageFinancialForm.feePaid"
+                    <label for="fee-paid-per-question">Fee paid per question</label>
+                    <input id="fee-paid-per-question" type="number" [field]="manageFinancialForm.feePaid"
                         [ngClass]="{'border border-red-400!': manageFinancialForm.feePaid().invalid() && manageFinancialForm.feePaid().touched()}"
                         placeholder="enter title" class="form-control">
                     @if(manageFinancialForm.feePaid().invalid() && manageFinancialForm.feePaid().touched()) {

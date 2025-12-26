@@ -1,13 +1,15 @@
 <div class="flex flex-row h-full relative">
 
-    <div class="absolute inset-0 flex justify-center items-center opacity-3 z-0 pointer-events-none">
-        <img src="/images/logo.png" alt="logo" class="w-[35%]">
+    <div class="absolute inset-0 flex justify-center items-center z-0 opacity-3 pointer-events-none">
+        <!-- <img ngSrc="/images/logo.png" alt="logo" width="347" height="293" priority> -->
+        <img ngSrc="/images/logo.png" alt="logo" width="447" height="377" priority>
     </div>
 
     @if(openSideNav()) {
     <div class="w-full md:w-80! lg:w-75! border-r border-gray-300 fixed bg-white md:relative z-80 h-full"
         animate.enter="enter-animation" animate.leave="leave-animation">
-        <div class="md:hidden absolute left-5 top-10 cursor-pointer" (click)="openSideNav.set(!openSideNav())">
+        <div class="md:hidden absolute left-5 top-10 cursor-pointer" tabindex="0"
+            (click)="openSideNav.set(!openSideNav())" (keyup.enter)="openSideNav.set(!openSideNav())">
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-primary stroke-3 w-6 h-6" viewBox="0 0 24 24"
                 width="20" height="20" color="currentColor" fill="none" stroke="#141B34" stroke-width="1.5"
                 stroke-linecap="round" stroke-linejoin="round">
