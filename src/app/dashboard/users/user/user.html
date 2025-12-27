@@ -7,6 +7,7 @@
         (click)="navigateBack()"
       >
         <svg
+          aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           class="w-4 h-4"
           viewBox="0 0 24 24"
@@ -32,6 +33,7 @@
       >
         <div class="flex flex-row gap-13">
           <span
+            aria-hidden="true"
             class="uppercase bg-primary rounded-full p-6 w-30 h-30 text-6xl font-bold text-white flex justify-center items-center"
             >r</span
           >
@@ -59,19 +61,17 @@
           <div>
             <span class="font-semibold first-letter:capitalize">status:</span>
             @if (true) {
-              <button
-                type="button"
+              <span
                 class="btn self-start ml-2 bg-transparent! text-primary! border! border-primary"
               >
                 active
-              </button>
+              </span>
             } @else {
-              <button
-                type="button"
+              <span
                 class="btn self-start ml-2 bg-transparent! text-red-400! border! border-red-400"
               >
                 inactive
-              </button>
+              </span>
             }
           </div>
         </div>
@@ -90,8 +90,8 @@
               <span class="first-letter:uppercase font-bold text-lg">use of english</span>
               <span class="uppercase font-bold text-lg">uoe</span>
             </div>
-            <div class="h-1.5 rounded-2xl mb-4">
-              <div class="h-full w-10 rounded-2xl bg-primary"></div>
+            <div class="h-1.5 rounded-2xl mb-4" aria-hidden="true">
+              <div class="h-full w-4 rounded-2xl bg-primary"></div>
             </div>
           </div>
         </div>
@@ -102,8 +102,8 @@
               <span class="first-letter:uppercase font-bold text-lg">use of english</span>
               <span class="uppercase font-bold text-lg">uoe</span>
             </div>
-            <div class="h-1.5 rounded-2xl mb-4">
-              <div class="h-full w-10 rounded-2xl bg-primary"></div>
+            <div class="h-1.5 rounded-2xl mb-4" aria-hidden="true">
+              <div class="h-full w-full rounded-2xl bg-primary"></div>
             </div>
           </div>
         </div>
@@ -114,8 +114,8 @@
               <span class="first-letter:uppercase font-bold text-lg">use of english</span>
               <span class="uppercase font-bold text-lg">uoe</span>
             </div>
-            <div class="h-1.5 rounded-2xl mb-4">
-              <div class="h-full w-10 rounded-2xl bg-primary"></div>
+            <div class="h-1.5 rounded-2xl mb-4" aria-hidden="true">
+              <div class="h-full w-20 rounded-2xl bg-primary"></div>
             </div>
           </div>
         </div>
@@ -126,8 +126,8 @@
               <span class="first-letter:uppercase font-bold text-lg">use of english</span>
               <span class="uppercase font-bold text-lg">uoe</span>
             </div>
-            <div class="h-1.5 rounded-2xl mb-4">
-              <div class="h-full w-10 rounded-2xl bg-primary"></div>
+            <div class="h-1.5 rounded-2xl mb-4" aria-hidden="true">
+              <div class="h-full w-30 rounded-2xl bg-primary"></div>
             </div>
           </div>
         </div>
@@ -138,8 +138,8 @@
               <span class="first-letter:uppercase font-bold text-lg">use of english</span>
               <span class="uppercase font-bold text-lg">uoe</span>
             </div>
-            <div class="h-1.5 rounded-2xl mb-4">
-              <div class="h-full w-10 rounded-2xl bg-primary"></div>
+            <div class="h-1.5 rounded-2xl mb-4" aria-hidden="true">
+              <div class="h-full w-40 rounded-2xl bg-primary"></div>
             </div>
           </div>
         </div>
@@ -150,8 +150,8 @@
               <span class="first-letter:uppercase font-bold text-lg">use of english</span>
               <span class="uppercase font-bold text-lg">uoe</span>
             </div>
-            <div class="h-1.5 rounded-2xl mb-4">
-              <div class="h-full w-10 rounded-2xl bg-primary"></div>
+            <div class="h-1.5 rounded-2xl mb-4" aria-hidden="true">
+              <div class="h-full w-50 rounded-2xl bg-primary"></div>
             </div>
           </div>
         </div>

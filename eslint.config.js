@@ -92,7 +92,6 @@ module.exports = defineConfig([
       '@angular-eslint/template/no-interpolation-in-attributes': 'error', // Disallow interpolation in Angular template attributes.
       '@angular-eslint/template/prefer-at-else': 'error', // Suggest using *ngIf; else instead of *ngIf with a negated condition in Angular templates.
       '@angular-eslint/template/prefer-at-empty': 'error', // Suggest using *ngIf; empty instead of checking for length or emptiness in Angular templates.
-      '@angular-eslint/template/prefer-built-in-pipes': 'error', // Suggest using built-in pipes instead of custom implementations in Angular templates.
       '@angular-eslint/template/prefer-contextual-for-variables': 'error', // Suggest using contextual variables in *ngFor directives in Angular templates.
       '@angular-eslint/template/prefer-control-flow': 'error', // Suggest using Angular control flow directives instead of alternative approaches in templates.
       '@angular-eslint/template/prefer-ngsrc': 'error', // Suggest using the NgSrc directive instead of binding to the src attribute directly in Angular templates.

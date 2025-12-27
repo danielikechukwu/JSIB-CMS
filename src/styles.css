@@ -139,7 +139,7 @@
 }
 
 body {
-  @apply font-inter h-dvh font-normal overflow-hidden text-xs bg-white;
+  @apply font-inter h-dvh font-normal overflow-hidden text-xs bg-white text-black;
 }
 
 /* Global Button Styling */
@@ -149,7 +149,7 @@ body {
 
 /* Global form styling */
 .form {
-  @apply border border-white;
+  @apply w-full;
 }
 
 .form .form-container {
@@ -178,11 +178,11 @@ body {
 
 /* Global nav styling */
 .nav {
-  @apply p-3 rounded-sm cursor-pointer text-sm;
+  @apply p-3 rounded-sm cursor-pointer text-sm flex flex-row items-center gap-2;
 }
 
 .nav-active {
-  @apply bg-primary text-white cursor-pointer text-sm rounded-sm p-3;
+  @apply bg-primary text-white! cursor-pointer text-sm rounded-sm p-3;
 }
 
 .nav-active svg {
@@ -215,6 +215,7 @@ tbody tr:last-child {
 }
 
 /* Global dialog styling */
+
 .p-dialog-header {
-  @apply py-0! pt-3!;
+  @apply py-0! pt-3! text-black!;
 }
